@@ -1,0 +1,30 @@
+.checkmark-icon {
+    color: blue;
+    font-size: 0.7em;
+    display: inline-flex;
+    align-items: center;
+  }
+
+
+  .row-padding{
+    padding-top: 10px;
+    padding-bottom: 0px;
+  }
+
+  .alignment{
+    align-items: center;
+  }
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.delete-icon {
+  color: grey;
+  font-size: 20px;
+}
+
