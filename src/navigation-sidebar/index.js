@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.css";
+import "./nav.css";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../logo.jpg";
 
@@ -7,23 +7,28 @@ const NavigationSidebar = () => {
   const { pathname } = useLocation();
   const active = pathname.split("/")[1]; // Get the first part of the pathname
 
-  const links = ["home", "other"];
+  const navItems = [
+    { link: "home", text: "Home", icon: "fa-home" },
+    { link: "other", text: "Other", icon: "fa-ellipsis-h" },
+  ];
 
   return (
     <div>
       <div>
-        <img src={logo} width="250px" className="rounded-circle" />
+        <img src={logo} alt="logo" className="img-fluid rounded-circle" />
+        {/* made the size of the image fluid, so it won't overflow when the screen is small */}
       </div>
       <br />
       <div className="list-group">
-        {links.map((link) => (
+        {navItems.map((item) => (
           <Link
-            to={`/${link}`}
+            to={`/${item.link}`}
             className={`list-group-item list-group-item-action text-center text-capitalize ${
-              active === link ? "active" : ""
+              active === item.link ? "active" : ""
             }`}
           >
-            {link}
+            <i className={`fas ${item.icon} d-inline-block d-md-none`}></i>
+            <span className="d-none d-md-inline-block">{item.text}</span>
           </Link>
         ))}
       </div>

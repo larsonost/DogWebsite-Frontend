@@ -1,0 +1,98 @@
+/* .sidebar-padding {
+  padding-left: 20px;
+}
+.btn-widen {
+  width: 150px;
+}
+.center-heading {
+  text-align: center;
+  color: #4783e4;
+  font-size: 55px;
+}
+
+.center-sub-heading {
+  text-align: center;
+  color: #85a6da;
+  font-size: 20px;
+}
+.dog-of-day-spacing {
+  padding-top: 50px;
+}
+
+.center-heading {
+  font-size: 2.5rem;
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-clip: text;
+  color: transparent;
+  animation: gradient 6s ease infinite;
+}
+
+.center-heading b {
+  animation: blink 1.5s infinite alternate;
+}
+
+.center-heading:before,
+.center-heading:after,
+.center-heading b:before,
+.center-heading b:after {
+  content: "Welcome to Doggo Mingle!";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-clip: text;
+  color: transparent;
+  filter: blur(5px);
+  opacity: 0.8;
+  animation: gradient 6s ease infinite;
+}
+
+.center-heading:after,
+.center-heading b:after {
+  filter: blur(8px);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
