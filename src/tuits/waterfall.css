@@ -1,0 +1,21 @@
+.waterfall {
+  /* Adjust this for the number of columns you want */
+  column-count: 2;
+  column-gap: 15px;
+}
+@media (max-width: 767.98px) {
+  .waterfall {
+    column-count: 1;
+  }
+}
+.waterfall li {
+  width: 100%;
+  margin-bottom: 15px;
+  display: block;
+  transition: transform 0.2s ease;
+  break-inside: avoid;
+}
+
+.waterfall img:hover {
+  transform: scale(1.05);
+}
