@@ -21,6 +21,13 @@
 - Google Map
 
 
+## Reference
+
+- [Pet friendly travel](https://petfriendlytravel.com/)
+- [dog-park-finder](https://github.com/stufooks/dog-park-finder-backend)
+- [dog go](https://github.com/mandafae/Dog-GO)
+  
+
 # Large screen
 ![large-1](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/6f1112fc-a541-453e-b686-747d6dab2803)
 
