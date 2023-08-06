@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,11 +35,30 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
-.app-container {
-  background-color: #f6fafd;
+/* .container {
+  background-color: #fafafa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+} */
+
+body {
+  background-image: url("./images/background02.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
 }
+
+/* .container {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  );} */
+/* Optional: semi-transparent white background to make content more readable */

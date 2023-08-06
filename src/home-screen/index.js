@@ -12,18 +12,20 @@ function HomeScreen() {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-8 order-2 order-md-1">
-          <div className="center-heading">
-            <b>Welcome to Doggo Mingle!</b>
+          <div className="heading-container">
+            <div className="center-heading">
+              <b>Welcome to Doggo Mingle!</b>
+            </div>
+            <div className="center-sub-heading">
+              <p>
+                <b>
+                  A marketplace for dog owners, merchants, and specialists to
+                  connect
+                </b>
+              </p>
+            </div>
           </div>
-          <div className="center-sub-heading">
-            <p>
-              <b>
-                A marketplace for dog owners, merchants, and specialists to
-                connect
-              </b>
-            </p>
-          </div>
-
+          <hr />
           <iframe
             className="embed-responsive-item"
             src="https://www.google.com/maps/embed?pb=..."
@@ -45,70 +47,74 @@ function HomeScreen() {
               Login or Register
             </Link>
           </div>
-          <b className="d-flex justify-content-center dog-of-day-spacing dog-of-day-title">
-            Dog of the Day !
-          </b>
+          <br />
+          <br />
 
-          <div className="d-flex justify-content-center mb-3 frame">
-            <div className="image-container">
-              <img
-                src={dog1}
-                alt="first dog"
-                className="img-fluid"
-                width={360}
-                height={360}
-              />
-              <img
-                src={dog2}
-                alt="second dog"
-                className="img-fluid"
-                width={360}
-                height={360}
-              />
-              <img
-                src={dog3}
-                alt="third dog"
-                className="img-fluid"
-                width={360}
-                height={360}
-              />
-              <img
-                src={dog4}
-                alt="forth dog"
-                className="img-fluid"
-                width={360}
-                height={360}
-              />
-              {/* ... other images ... */}
-              <img
-                src={dog1}
-                alt="repeat first dog"
-                className="img-fluid"
-                width={360}
-                height={360}
-              />
-              <img
-                src={dog2}
-                alt="repeat second dog"
-                className="img-fluid"
-                width={360}
-                height={360}
-              />
-              <img
-                src={dog3}
-                alt="repeat third dog"
-                className="img-fluid"
-                width={360}
-                height={360}
-              />
-              <img
-                src={dog4}
-                alt="repeat forth dog"
-                className="img-fluid"
-                width={360}
-                height={360}
-              />
-              {/* ... duplicate other images ... */}
+          <div className="d-flex justify-content-center dog-of-day-title">
+            Dog of the Day !
+          </div>
+          <div className="d-flex justify-content-center">
+            <div className="mb-3 frame">
+              <div className="image-container">
+                <img
+                  src={dog1}
+                  alt="first dog"
+                  className="img-fluid"
+                  width={360}
+                  height={360}
+                />
+                <img
+                  src={dog2}
+                  alt="second dog"
+                  className="img-fluid"
+                  width={360}
+                  height={360}
+                />
+                <img
+                  src={dog3}
+                  alt="third dog"
+                  className="img-fluid"
+                  width={360}
+                  height={360}
+                />
+                <img
+                  src={dog4}
+                  alt="forth dog"
+                  className="img-fluid"
+                  width={360}
+                  height={360}
+                />
+                {/* ... other images ... */}
+                <img
+                  src={dog1}
+                  alt="repeat first dog"
+                  className="img-fluid"
+                  width={360}
+                  height={360}
+                />
+                <img
+                  src={dog2}
+                  alt="repeat second dog"
+                  className="img-fluid"
+                  width={360}
+                  height={360}
+                />
+                <img
+                  src={dog3}
+                  alt="repeat third dog"
+                  className="img-fluid"
+                  width={360}
+                  height={360}
+                />
+                <img
+                  src={dog4}
+                  alt="repeat forth dog"
+                  className="img-fluid"
+                  width={360}
+                  height={360}
+                />
+                {/* ... duplicate other images ... */}
+              </div>
             </div>
           </div>
         </div>
