@@ -1,4 +1,6 @@
 # Large screen
-![large](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/571b474e-e060-42dc-96d5-34f68c88ffc9)
+![large](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/c48f324d-5844-4240-8a56-25b20f7a44a5)
+
 # Small screen
-![small](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/e9008af1-6ba7-4b5a-a58f-86b89382053a)
+
+![small](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/c3c86b0b-ee82-42c3-b08d-dd20bc695c3c)
