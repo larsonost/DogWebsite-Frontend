@@ -1,8 +1,11 @@
 import React from "react";
 import TuitsList from "../tuits";
 import { Link } from "react-router-dom";
-import dogOfTheDay from "../dogOfTheDay.jpg";
-//import "./home.css";
+import dog1 from "../images/dog1.jpg";
+import dog2 from "../images/dog2.png";
+import dog3 from "../images/dog3.jpg";
+import dog4 from "../images/dog4.jpg";
+import "./home.css";
 
 function HomeScreen() {
   return (
@@ -45,13 +48,68 @@ function HomeScreen() {
           <b className="d-flex justify-content-center dog-of-day-spacing dog-of-day-title">
             Dog of the Day !
           </b>
-          <div className="d-flex justify-content-center mb-3">
-            <img
-              src={dogOfTheDay}
-              alt="dog of the day"
-              className="img-fluid"
-              width={250}
-            />
+
+          <div className="d-flex justify-content-center mb-3 frame">
+            <div className="image-container">
+              <img
+                src={dog1}
+                alt="first dog"
+                className="img-fluid"
+                width={360}
+                height={360}
+              />
+              <img
+                src={dog2}
+                alt="second dog"
+                className="img-fluid"
+                width={360}
+                height={360}
+              />
+              <img
+                src={dog3}
+                alt="third dog"
+                className="img-fluid"
+                width={360}
+                height={360}
+              />
+              <img
+                src={dog4}
+                alt="forth dog"
+                className="img-fluid"
+                width={360}
+                height={360}
+              />
+              {/* ... other images ... */}
+              <img
+                src={dog1}
+                alt="repeat first dog"
+                className="img-fluid"
+                width={360}
+                height={360}
+              />
+              <img
+                src={dog2}
+                alt="repeat second dog"
+                className="img-fluid"
+                width={360}
+                height={360}
+              />
+              <img
+                src={dog3}
+                alt="repeat third dog"
+                className="img-fluid"
+                width={360}
+                height={360}
+              />
+              <img
+                src={dog4}
+                alt="repeat forth dog"
+                className="img-fluid"
+                width={360}
+                height={360}
+              />
+              {/* ... duplicate other images ... */}
+            </div>
           </div>
         </div>
       </div>

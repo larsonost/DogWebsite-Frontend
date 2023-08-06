@@ -3,3 +3,39 @@
   /* color: rgb(42, 53, 249); */
   text-align: center;
 }
+
+/* Frame styling */
+.frame {
+  width: 360px;
+  height: 360px;
+  border: 5px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Image styling */
+.img-fluid {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Adjusted animation keyframes */
+@keyframes moveImages {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(
+      -1400px
+    ); /* Move up by the height of one set of images */
+  }
+}
+
+.image-container {
+  animation: moveImages 20s linear infinite;
+  display: flex;
+  flex-direction: column;
+}

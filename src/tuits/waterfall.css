@@ -1,5 +1,4 @@
 .waterfall {
-  /* Adjust this for the number of columns you want */
   column-count: 2;
   column-gap: 15px;
 }
