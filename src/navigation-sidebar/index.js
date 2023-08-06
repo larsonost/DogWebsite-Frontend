@@ -9,6 +9,9 @@ const NavigationSidebar = () => {
 
   const navItems = [
     { link: "home", text: "Home", icon: "fa-home" },
+    { link: "profile", text: "profile", icon: "fa-home" },
+    { link: "details", text: "details", icon: "fa-home" },
+    { link: "search", text: "search", icon: "fa-home" },
     { link: "other", text: "Other", icon: "fa-ellipsis-h" },
   ];
 

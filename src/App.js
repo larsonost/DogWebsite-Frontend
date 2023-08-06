@@ -2,11 +2,15 @@ import { HashRouter, useLocation } from "react-router-dom";
 import HomeScreen from "./home-screen";
 import RegisterScreen from "./register-screen";
 import NavigationSidebar from "./navigation-sidebar";
+import SearchResult from "./search result";
 import { Routes, Route, Navigate } from "react-router";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import LoginScreen from "./login-screen";
 import whoReducer from "./reducers/who-reducer";
+import Profile from "./profile-screen";
+import DetailContent from "./details-screen/detail_element";
+import ProfileContent from "./profile-screen/profile-element";
 import tuitsReducer from "./reducers/tuits-reducer";
 import "./App.css"; // Import the App.css file
 const store = configureStore({
@@ -44,6 +48,9 @@ function App() {
                 <Route path="/home/*" element={<HomeScreen />} />
                 <Route path="/login" element={<LoginScreen />} />
                 <Route path="/register" element={<RegisterScreen />} />
+                <Route path="/profile" element={<ProfileContent />} />
+                <Route path="/details" element={<DetailContent />} />
+                <Route path="/search" element={<SearchResult />} />
               </Routes>
             </div>
           </div>
