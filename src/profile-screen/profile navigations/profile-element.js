@@ -4,9 +4,6 @@ function ProfileContent(){
     return (
         <>
             <div className="row">
-                <div className="col-2">
-                    <h2>Navigation</h2>
-                </div>
                 <div className="col-9">
                     <div className="row">
                         <div className="col-1">
@@ -24,11 +21,6 @@ function ProfileContent(){
                                 <li className="nav-item">
                                     <a className="nav-link">Edit Profile</a>
                                 </li>
-                            </ul>
-                            <ul className="list-group">
-
-                                <li>Content</li>
-                                <li>Content</li>
                             </ul>
                         </div>
 
