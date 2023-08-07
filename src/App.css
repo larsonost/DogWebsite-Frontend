@@ -52,6 +52,26 @@ body {
   background-attachment: fixed;
 }
 
+body.dark-mode {
+  background-image: url("./images/background04.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/* @keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo {
+  animation: spin 2s linear infinite;
+} */
 /* .container {
   position: relative;
   z-index: 1;

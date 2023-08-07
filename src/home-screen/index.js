@@ -18,11 +18,9 @@ function HomeScreen() {
             </div>
             <div className="center-sub-heading">
               <p>
-                <b>
-                  A marketplace for dog owners, merchants, and specialists to
-                  connect
-                </b>
+                <b>For dog owners, merchants, and specialists to connect</b>
               </p>
+              {/* Changed the wording of the sub-heading */}
             </div>
           </div>
           <hr />

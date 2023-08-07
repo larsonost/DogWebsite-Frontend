@@ -15,10 +15,20 @@ const NavigationSidebar = () => {
     { link: "other", text: "Other", icon: "fa-ellipsis-h" },
   ];
 
+  const toggleTheme = () => {
+    document.body.classList.toggle("dark-mode");
+  };
+
   return (
     <div>
       <div>
-        <img src={logo} alt="logo" className="img-fluid rounded-circle" />
+        <img
+          id="logo"
+          src={logo}
+          alt="logo"
+          className="logo img-fluid rounded-circle"
+          onClick={toggleTheme}
+        />
         {/* made the size of the image fluid, so it won't overflow when the screen is small */}
       </div>
       <br />
