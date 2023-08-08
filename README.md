@@ -6,6 +6,8 @@
 
 [Logo](https://www.canva.com/design/DAFqJBq2lMM/DdE9nO73E_vZSAwkr4gf1w/edit?utm_content=DAFqJBq2lMM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
+[Corgi Icon](https://codepen.io/JayJay89/pen/aNmoYR)
+
 ## Thoughts and ideas
 
 ### Users
