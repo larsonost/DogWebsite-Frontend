@@ -31,6 +31,8 @@
 - [dog go](https://github.com/mandafae/Dog-GO)
 - [dog pack](https://www.dogpackapp.com/)
   
+# GIFs
+![ezgif com-video-to-gif](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/8d42fe94-df86-421d-9901-b3b43f789fa4)
 
 # Large screen
 ![large-1](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/24fbf27f-5f61-4dab-9231-0d21b567a028)
