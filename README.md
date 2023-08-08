@@ -32,7 +32,13 @@
 - [dog pack](https://www.dogpackapp.com/)
   
 # GIFs
-![ezgif com-video-to-gif](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/8d42fe94-df86-421d-9901-b3b43f789fa4)
+![screen](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/4666d350-71c8-4650-97b2-e67501099f33)
+
+![ezgif com-video-to-gif](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/0af9e37f-444c-462c-a107-c7426aab53f6)
+
+
+
+
 
 # Large screen
 
