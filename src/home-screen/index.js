@@ -6,6 +6,7 @@ import dog2 from "../images/dog2.png";
 import dog3 from "../images/dog3.jpg";
 import dog4 from "../images/dog4.jpg";
 import "./home.css";
+import "./corgi.css";
 
 function HomeScreen() {
   return (
@@ -38,15 +39,73 @@ function HomeScreen() {
           {/* ensured that the 'Dog of the Day' image and 'Login or Register' button
           will appear at the top on small screens and return to the side on
           larger screens. */}
-          <br></br>
-          <p className="text-center">Need an account? Sign in or join below!</p>
-          <div className="d-flex justify-content-center mb-3">
-            <Link to="/login" className="btn btn-primary">
-              Login or Register
-            </Link>
+
+          {/* corgi*/}
+          <div className="corgi-container">
+            <div className="wrapper">
+              <div className="wave"></div>
+            </div>
+            <div className="corgi-wrapper mt-4 d-flex justify-content-center">
+              {/* corgi icon */}
+              <br /> <br />
+              <div className="corgi">
+                <div className="head">
+                  <div className="ear ear--r"></div>
+                  <div className="ear ear--l"></div>
+
+                  <div className="eye eye--left"></div>
+                  <div className="eye eye--right"></div>
+
+                  <div className="face">
+                    <div className="face__white">
+                      <div className=" face__orange face__orange--l"></div>
+                      <div className=" face__orange face__orange--r"></div>
+                    </div>
+                  </div>
+
+                  <div className="face__curve"></div>
+
+                  <div className="mouth">
+                    <div className="nose"></div>
+                    <div className="mouth__left">
+                      <div className="mouth__left--round"></div>
+                      <div className="mouth__left--sharp"></div>
+                    </div>
+
+                    <div className="lowerjaw">
+                      <div className="lips"></div>
+                      <div className="tongue test"></div>
+                    </div>
+
+                    <div className="snout"></div>
+                  </div>
+                </div>
+
+                <div className="neck__back"></div>
+                <div className="neck__front"></div>
+
+                <div className="body">
+                  <div className="body__chest"></div>
+                </div>
+
+                <div className="foot foot__left foot__front foot__1"></div>
+                <div className="foot foot__right foot__front foot__2"></div>
+                <div className="foot foot__left foot__back foot__3"></div>
+                <div className="foot foot__right foot__back foot__4"></div>
+
+                <div className="tail test"></div>
+              </div>
+            </div>
+            <div className="surfboard-button-container mb-3">
+              <Link to="/login" className="surfboard-button">
+                <i className="fas fa-paw"></i> Login or Register{" "}
+                <i className="fas fa-paw"></i>
+              </Link>
+            </div>
           </div>
-          <br />
-          <br />
+          {/* coggi icon */}
+
+          {/* <p className="text-center">Need an account? Sign in or join below!</p> */}
 
           <div className="d-flex justify-content-center dog-of-day-title">
             Dog of the Day !
