@@ -31,15 +31,25 @@
 - [dog go](https://github.com/mandafae/Dog-GO)
 - [dog pack](https://www.dogpackapp.com/)
   
+# GIFs
+![screen](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/4666d350-71c8-4650-97b2-e67501099f33)
+
+![ezgif com-video-to-gif](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/0af9e37f-444c-462c-a107-c7426aab53f6)
+
+
+
+
 
 # Large screen
-![large-1](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/24fbf27f-5f61-4dab-9231-0d21b567a028)
+
+![large-1](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/abe8cdb9-adac-469e-91d0-6db7f281f42e)
 
 
 ![large](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/c48f324d-5844-4240-8a56-25b20f7a44a5)
 
 # Small screen
-![small-1](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/640f72c2-8fbc-4544-ad5b-f953e8fd4770)
+
+![small-1](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/43feb03c-5fa4-4d09-87ca-e576ebb4b4b3)
 
 
 ![small](https://github.com/Lenore8963/DoggoWebApp/assets/118407314/c3c86b0b-ee82-42c3-b08d-dd20bc695c3c)
