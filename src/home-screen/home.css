@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e6e6fa;
+  background-color: #9bbff4;
 
   padding: 20px; /* Space around the text */
 
   border-radius: 15px; /* Rounded corners */
   max-width: 100%; /* Adjust as needed */
   margin: 0 auto; /* Center the container */
-  background-color: #e6e6fa;
+  background-color: #9bbff4;
   border: 5px solid #9370db; /* Medium purple for the border */
   box-shadow: 1px -1px 0 #8a2be2, /* BlueViolet */ -1px 1px 0 #8a2be2,
     1px 1px 0 #4b0082, /* Indigo */ -1px -1px 0 #4b0082, 1px 1px 2px #8a2be2,
@@ -57,7 +57,7 @@
   font-family: "Quicksand", sans-serif; /* A complementary, readable font */
   font-size: 1.5em; /* Slightly larger for better readability */
   text-align: center;
-  color: #85a1c1; /* A softer pink that complements the main heading */
+  color: #545454; /* A softer pink that complements the main heading */
   text-shadow: 1px -1px 2px #ffccf9,
     /* Light pink shadow for a subtle glow */ -1px 1px 2px #ffccf9,
     1px 1px 2px #ffccf9, -1px -1px 2px #ffccf9;
@@ -70,7 +70,7 @@
   font-size: 2em;
   font-weight: 100;
   font-weight: normal; /* Set to normal weight */
-  color: #ff7f3f; /* Dark color for the text */
+  color: #f18d00; /* Dark color for the text */
   text-shadow: 1px -1px 0 #ff0000, /* Red */ -1px 1px 0 #ff7f00,
     /* Orange */ 1px 1px 0 #ffff00, /* Yellow */ -1px -1px 0 #7fff00,
     /* Chartreuse */ 1px 1px 2px #00ff00, /* Green */ -1px -1px 2px #00ff7f,
@@ -88,7 +88,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   position: relative;
-  border-color: #ff7f3f; /* Dark color for the border */
+  border-color: #f18d00; /* Dark color for the border */
   box-shadow: 1px -1px 0 #ff0000, -1px 1px 0 #ff7f00, 1px 1px 0 #ffff00,
     -1px -1px 0 #7fff00, 1px 1px 2px #00ff00, -1px -1px 2px #00ff7f,
     1px 1px 2px #00ffff, -1px -1px 2px #007fff, 1px 1px 2px #0000ff,

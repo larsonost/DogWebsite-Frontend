@@ -1,7 +1,7 @@
 import React from "react";
 import "./nav.css";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../images/logo.png";
+import logo from "../images/logo-new.png";
 
 const NavigationSidebar = () => {
   const { pathname } = useLocation();

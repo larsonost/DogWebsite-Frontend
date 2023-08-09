@@ -256,7 +256,7 @@ body {
   left: 0; /* Adjust to align with the column */
   top: 0; /* Adjust to align with the column */
   border-radius: 5px;
-  background-image: linear-gradient(to top, #e6e6fa 50%, transparent 100%);
+  background-image: linear-gradient(to top, #9bbff4 50%, transparent 100%);
   z-index: -1;
 }
 
@@ -270,7 +270,7 @@ body {
   margin-top: -320px;
   border-radius: 35%;
 
-  background: radial-gradient(circle, gold 0%, white 50%);
+  background: radial-gradient(circle, gold 0%, #fafafa 50%);
 
   animation: wave 15s infinite linear;
 }
@@ -416,7 +416,7 @@ body {
 }
 .corgi .face__curve:after {
   content: "";
-  background-color: #8c5a46;
+  background-color: white;
   position: absolute;
   width: 69%;
   height: 82%;
@@ -495,7 +495,7 @@ body {
   content: "";
   display: block;
   background: #ffffff;
-  width: 39%;
+  width: 50%;
   height: 100%;
   border-color: #3e3954;
   border-width: 3px;
@@ -520,7 +520,7 @@ body {
   height: 60%;
   background-color: #f15f55;
   right: 14%;
-  top: 35%;
+  top: 50%;
   border-bottom-right-radius: 50% 50%;
   border-bottom-left-radius: 50% 50%;
   transform-origin: 50% 0%;
