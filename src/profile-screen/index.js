@@ -1,5 +1,10 @@
 import {Routes, Route}
     from "react-router";
+    import React, { useState, useEffect } from "react";
+    import { useSelector, useDispatch } from "react-redux";
+    import { useNavigate } from "react-router";
+    import { profileThunk, logoutThunk, updateUserThunk }
+      from "../services/auth-thunks";
 import ProfileNavigation from "./profile navigations";
 import DailyShowOff from "./profile navigations/daily-show-off";
 import Recommendations from "./profile navigations/recommendations";
@@ -9,6 +14,22 @@ import PersonalDetail from "./profile navigations/personal-detail";
 
 
 function Profile() {
+    const { currentUser } = useSelector((state) => state.user);
+  const [ profile, setProfile ] = useState(currentUser);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const save = () => {
+    dispatch(updateUserThunk(profile));
+  };
+// Function reworked by Github Copilot
+  useEffect(() => {
+    async function fetchProfile() {
+      const { payload } = await dispatch(profileThunk());
+      setProfile(payload);
+    }
+
+    fetchProfile();
+  }, [dispatch]);
     return (
         <div>
             <div className="row">

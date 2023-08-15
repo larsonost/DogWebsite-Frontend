@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { loginThunk, registerThunk } from "../services/auth-thunks";
 import { Link } from 'react-router-dom';
 
 function RegisterScreen() {
+    const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleRegister = async () => {
+    try {
+      await dispatch(registerThunk({ username, password, lastName, firstName }));
+      navigate("/tuiter/profile");
+    } catch (e) {
+      alert(e);
+    }
+  };
     return (
         <div className="row">
             <div className="col-8">

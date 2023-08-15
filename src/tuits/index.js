@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TuitItem from "./tuit-item";
-import { useSelector } from "react-redux";
 import "./waterfall.css";
+import { findTuitsThunk } from "../services/tuits-thunks";
+import { useDispatch, useSelector } from "react-redux";
 
 const TuitsList = () => {
   const { tuits, loading } = useSelector(state => state.tuits)
