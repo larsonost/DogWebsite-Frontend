@@ -1,21 +1,23 @@
 [
   {
     "_id": 123,
-    "userName": "Jane Doe",
-    "title": "Owner of a golden retriever",
+    "topic": "Space",
+    "userName": "SpaceX",
+    "title": "Tesla CyberTruck lands on Mars and picks up the Curiosity rover on its 6' bed",
     "time": "2h",
-    "image": "dog.jpg",
+    "image": "spacex_a42.jpg",
     "liked": true,
     "replies": 123,
     "retuits": 432,
     "likes": 12345,
-    "handle": "dog owner",
+    "handle": "@spacex",
     "tuit": "This morning at 12:34 EST Earth time, a convoy of Tesla Cybertrucks drove across the Martian landscape after picking up the Curiosity, Sojournerm, Spirit, and Perserverance on their 6' beds"
 
   },
   {
     "_id": 234,
-    "userName": "Jane Doe",
+    "topic": "Space",
+    "userName": "Tesla",
     "title": "100s of SpaceX Starships land on Mars after a 6 month journey. 1000s of Martian colonists being building Mars Base 1",
     "time": "4d",
     "image": "tesla_a4.jpg",
@@ -29,7 +31,8 @@
   },
   {
     "_id": 345,
-    "userName": "Jane Doe",
+    "topic": "Energy",
+    "userName": "SpaceX",
     "title": "Tesla FSD finally makes driving obsolete. After years of delay, Tesla Full Self Driving can drive you to work while you work, play, or sleep",
     "time": "2h",
     "image": "spacex_a42.jpg",
@@ -39,5 +42,7 @@
     "likes": 22345,
     "handle": "@spacex",
     "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
+
+
   }
 ]
