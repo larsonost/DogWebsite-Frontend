@@ -1,4 +1,5 @@
 import React from "react";
+import OwnerPosts from "./posts/owner-posts";
 import TuitsList from "../tuits";
 import { Link } from "react-router-dom";
 import dog1 from "../images/dog1.jpg";
@@ -32,6 +33,8 @@ function HomeScreen() {
             style={{ width: "100%", height: "400px" }}
             title="map"
           ></iframe>
+          <br />
+          <OwnerPosts/>
           <br />
           <TuitsList />
         </div>
