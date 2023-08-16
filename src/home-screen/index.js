@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import OwnerPosts from "./posts/owner-posts";
 import TuitsList from "../tuits";
 import { Link } from "react-router-dom";
@@ -10,6 +11,8 @@ import "./home.css";
 import "./corgi.css";
 
 function HomeScreen() {
+  const { currentUser } = useSelector((state) => state.user);
+  
   return (
     <div className="container-fluid">
       <div className="row">
@@ -99,12 +102,13 @@ function HomeScreen() {
                 <div className="tail test"></div>
               </div>
             </div>
-            <div className="surfboard-button-container mb-3">
-              <Link to="/login" className="surfboard-button">
-                <i className="fas fa-paw"></i> Login or Register{" "}
-                <i className="fas fa-paw"></i>
-              </Link>
-            </div>
+            { !currentUser && (
+    <div className="surfboard-button-container mb-3">
+        <Link to="/login" className="surfboard-button">
+            <i className="fas fa-paw"></i> Login or Register <i className="fas fa-paw"></i>
+        </Link>
+    </div>
+)}
           </div>
           {/* coggi icon */}
 

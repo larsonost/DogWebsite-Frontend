@@ -31,10 +31,27 @@ export const updateUser = async (user) => {
   return response.data;
 };
 
-export const register = async ({ username, password, firstName, lastName }) => {
+export const register = async ({ username, password, lastName, firstName, role, dogname, dogbreed, service, productname, productprice }) => {
+  console.log(username, password, lastName, firstName, role, dogname, dogbreed, service, productname, productprice)
+  const dog = { 
+    name: dogname, 
+    breed: dogbreed 
+  };
+  
+  const product = { 
+    name: productname, 
+    price: productprice 
+  };
+
+  const dogs = dogname && dogbreed ? [dog] : [];
+  const products = productname && productprice ? [product] : [];
+
+  console.log(dog, product)
   const response = await api.post(`${USERS_URL}/register`, {
-    username, password, firstName, lastName
+    username, password, firstName, lastName, role, dogs, service, products
   });
+  console.log(response)
   const user = response.data;
+  console.log(user)
   return user;
 };

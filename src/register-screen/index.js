@@ -9,6 +9,11 @@ function RegisterScreen() {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [dogname, setDogName] = useState("");
+  const [dogbreed, setDogBreed] = useState("");
+  const [service, setSpecialty] = useState("");
+  const [productname, setProductName] = useState("");
+  const [productprice, setProductPrice] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleRoleChange = (e) => {
@@ -17,7 +22,7 @@ function RegisterScreen() {
 
   const handleRegister = async () => {
     try {
-      await dispatch(registerThunk({ username, password, lastName, firstName }));
+      await dispatch(registerThunk({ username, password, lastName, firstName, role, dogname, dogbreed, service, productname, productprice }));
       navigate("/../profile");
     } catch (e) {
       alert(e);
@@ -118,30 +123,43 @@ function RegisterScreen() {
               {/* Conditional Fields based on role */}
               {role === "Owner" && (
                 <div className="mb-3">
-                  {/* Add any additional fields required for Owners here */}
-                  <label htmlFor="ownerProperty" className="form-label">Property Owned</label>
-                  <input type="text" className="form-control" id="ownerProperty" placeholder="Enter property details" />
-                </div>
+                {/* Add any additional fields required for Sellers here */}
+                <label htmlFor="dogname" className="form-label">Shop Name</label>
+                <input type="text" className="form-control" id="dogname" placeholder="Enter shop name" value={dogname}
+                  onChange={(e) => setDogName(e.target.value)} />
+
+                <label htmlFor="dogbreed" className="form-label">Shop Name</label>
+                <input type="text" className="form-control" id="dogbreed" placeholder="Enter shop name"  value={dogbreed}
+                  onChange={(e) => setDogBreed(e.target.value)} />
+              </div>
               )}
               {role === "Seller" && (
                 <div className="mb-3">
                   {/* Add any additional fields required for Sellers here */}
-                  <label htmlFor="shopName" className="form-label">Shop Name</label>
-                  <input type="text" className="form-control" id="shopName" placeholder="Enter shop name" />
+                  <label htmlFor="productname" className="form-label">Shop Name</label>
+                  <input type="text" className="form-control" id="productname" placeholder="Enter shop name" value={productname}
+                    onChange={(e) => setProductName(e.target.value)} />
+
+                  <label htmlFor="productprice" className="form-label">Shop Name</label>
+                  <input type="text" className="form-control" id="productprice" placeholder="Enter shop name"  value={productprice}
+                    onChange={(e) => setProductPrice(e.target.value)} />
                 </div>
               )}
               {role === "Specialist" && (
                 <div className="mb-3">
                   {/* Add any additional fields required for Specialists here */}
-                  <label htmlFor="specialty" className="form-label">Specialty</label>
-                  <input type="text" className="form-control" id="specialty" placeholder="Enter specialty" />
+                  <label htmlFor="service" className="form-label">Service</label>
+                  <input type="text" className="form-control" id="service" placeholder="Enter service" value={service}
+                    onChange={(e) => setSpecialty(e.target.value)} />
                 </div>
+                
               )}
               <button type="button" className="btn btn-primary" onClick={handleRegister}>Register</button>
             </form>
             <hr />
             <p>Already have an account? Please sign in!</p>
             <Link to="/login" className="btn btn-secondary">Sign In</Link>
+            
           </div>
         </div>
       </div>
