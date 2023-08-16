@@ -46,12 +46,9 @@ export const register = async ({ username, password, lastName, firstName, role, 
   const dogs = dogname && dogbreed ? [dog] : [];
   const products = productname && productprice ? [product] : [];
 
-  console.log(dog, product)
   const response = await api.post(`${USERS_URL}/register`, {
     username, password, firstName, lastName, role, dogs, service, products
   });
-  console.log(response)
   const user = response.data;
-  console.log(user)
   return user;
 };
