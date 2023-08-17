@@ -1,6 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import OwnerPosts from "./posts/owner-posts";
+import GuestPosts from "./posts/guest-posts";
+import MerchantPosts from "./posts/merchant-posts";
+import SpecialistPosts from "./posts/specialist-posts";
 import TuitsList from "../tuits";
 import { Link } from "react-router-dom";
 import dog1 from "../images/dog1.jpg";
@@ -12,7 +15,29 @@ import "./corgi.css";
 
 function HomeScreen() {
   const { currentUser } = useSelector((state) => state.user);
-  
+  console.log(currentUser)
+  const handleButtonClick2 = () => {
+    console.log(currentUser.data.role);
+  };
+  const printCurrentUserDogs = () => {
+    console.log(currentUser.data.dogs.length);
+  };
+  let UserSpecificPosts;
+
+  if (!currentUser) {
+    UserSpecificPosts = <GuestPosts />;
+} else {
+    let userRole = currentUser.data.role.toLowerCase();
+    if (userRole === "owner") {
+        UserSpecificPosts = <OwnerPosts />;
+    } else if (userRole === "merchant") {
+        UserSpecificPosts = <MerchantPosts />;
+    } else if (userRole === "specialist") {
+        UserSpecificPosts = <SpecialistPosts />;
+    } else {
+        UserSpecificPosts = null;  // or a default content if needed
+    }
+}
   return (
     <div className="container-fluid">
       <div className="row">
@@ -27,17 +52,15 @@ function HomeScreen() {
               </p>
               {/* Changed the wording of the sub-heading */}
             </div>
+            <div>
+      <button onClick={printCurrentUserDogs}>Print Current User's Dogs</button>
+    </div>
+            <div>
+            </div>
           </div>
           <hr />
-          <iframe
-            className="embed-responsive-item"
-            src="https://www.google.com/maps/embed?pb=..."
-            allowFullScreen
-            style={{ width: "100%", height: "400px" }}
-            title="map"
-          ></iframe>
           <br />
-          <OwnerPosts/>
+          {UserSpecificPosts}
           <br />
           <TuitsList />
         </div>
@@ -102,13 +125,11 @@ function HomeScreen() {
                 <div className="tail test"></div>
               </div>
             </div>
-            { !currentUser && (
-    <div className="surfboard-button-container mb-3">
-        <Link to="/login" className="surfboard-button">
-            <i className="fas fa-paw"></i> Login or Register <i className="fas fa-paw"></i>
-        </Link>
-    </div>
-)}
+            <div className="surfboard-button-container mb-3">
+                <Link to="/login" className="surfboard-button">
+                  <i className="fas fa-paw"></i> Login or Register <i className="fas fa-paw"></i>
+                </Link>
+              </div>
           </div>
           {/* coggi icon */}
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ownerProfile from "./ownerProfile.jpg";
+import merchantProfile from "./merchantProfile.jpg";
 import { useSelector } from "react-redux";
 import {AiOutlinePicture} from "react-icons/ai";
 import {MdFormatListBulleted} from "react-icons/md";
@@ -25,7 +25,7 @@ const OwnerPosts = () => {
     const tuitClickHandler = () => {
         const newTuit = {
             tuit: whatsHappening,
-            image: ownerProfile,
+            image: merchantProfile,
             username: currentUser.data.username,
             time: "now",
             likes: 0,
@@ -33,11 +33,7 @@ const OwnerPosts = () => {
             dislikes: 0,
             disliked: false,
             title: title,
-            seekingrole: roleOption,
-            role: "Owner",
-            selectedDogName: selectedDog.name,
-            selectedDogBreed: selectedDog.breed,
-            interest: interest,
+            role: "Merchant",
         };
         dispatch(createTuitThunk(newTuit));
         setWhatsHappening("");
@@ -48,7 +44,7 @@ const OwnerPosts = () => {
     return (
         <div className="row mt-4">
             <div className="col-md-2 text-center">
-                <img src={ownerProfile} width={90} alt="Owner Profile" className="rounded-circle mb-3" />
+                <img src={merchantProfile} width={90} alt="merchant Profile" className="rounded-circle mb-3" />
             </div>
             
             <div className="col-md-10">

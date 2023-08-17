@@ -6,6 +6,7 @@ import { profileThunk, logoutThunk, updateUserThunk }
 function ProfileScreen() {
   const { currentUser } = useSelector((state) => state.user);
   const [ profile, setProfile ] = useState(currentUser);
+  console.log("HERE")
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const save = () => {

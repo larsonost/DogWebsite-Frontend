@@ -7,7 +7,7 @@ const initialState = {
 }
 
 const currentUser = {
-  "userName": "NASA",
+  "userName": "edede",
   "handle": "@nasa",
   "image": "nasa.jpg",
 };
