@@ -9,6 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const OwnerTuit = ({ tuit }) => {
   const dispatch = useDispatch();
   const deleteTuitHandler = (id) => {
+    console.log("Clicked Delete")
+    console.log(id)
     dispatch(deleteTuit(id));
   };
   return (

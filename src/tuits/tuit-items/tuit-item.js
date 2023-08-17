@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const TuitItem = ({ tuit }) => {
   const dispatch = useDispatch();
   const deleteTuitHandler = (id) => {
+    console.log("Clicked Delete")
     dispatch(deleteTuit(id));
   };
   return (
@@ -25,6 +26,7 @@ const TuitItem = ({ tuit }) => {
           <div className="col-10">
             <div
               className="delete-button"
+              
               onClick={() => deleteTuitHandler(tuit._id)}
             >
               <FaTimes className="delete-icon" />

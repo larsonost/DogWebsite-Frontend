@@ -12,15 +12,16 @@ import {createTuitThunk} from "../../services/tuits-thunks";
 import { useDispatch } from "react-redux";
 
 const OwnerPosts = () => {
+    const [dogBreed, setDogBreed] = useState('');
     const [whatsHappening, setWhatsHappening] = useState('');
     const [title, setTitle] = useState('');
     const [interest, setInterest] = useState('');
     const [roleOption, setRoleOption] = useState('Specialist');
-    const [selectedDog, setSelectedDog] = useState(null);
+    const [selectedproduct, setSelectedproduct] = useState(null);
 
     const dispatch = useDispatch();
     const { currentUser } = useSelector((state) => state.user);
-    const dogs = currentUser.data.dogs;
+    const products = currentUser.data.products;
 
     const tuitClickHandler = () => {
         const newTuit = {
@@ -34,6 +35,10 @@ const OwnerPosts = () => {
             disliked: false,
             title: title,
             role: "Merchant",
+            interest: interest,
+            selectedproductName: selectedproduct.name,
+            selectedproductPrice: selectedproduct.price,
+            dogBreedTarget: dogBreed 
         };
         dispatch(createTuitThunk(newTuit));
         setWhatsHappening("");
@@ -56,62 +61,50 @@ const OwnerPosts = () => {
                 />
                 <textarea 
                     value={whatsHappening}
-                    placeholder="Owner Posts"
+                    placeholder="Post body"
                     className="form-control border-0 mb-3"
                     rows="3"
                     onChange={(event) => setWhatsHappening(event.target.value)}
                 ></textarea>
                 
-                <h6>Your Dog:</h6>
+                <h6>Your Products:</h6>
                 <div className="mb-3">
-                    {dogs.map((dog, index) => (
+                    {products.map((product, index) => (
                         <div className="form-check" key={index}>
                             <input 
                                 className="form-check-input"
                                 type="radio"
-                                name="selectedDog"
-                                id={`dog-${index}`}
-                                value={dog.name}
-                                onChange={() => setSelectedDog(dog)}
+                                name="selectedproduct"
+                                id={`product-${index}`}
+                                value={product.name}
+                                onChange={() => setSelectedproduct(product)}
                             />
-                            <label className="form-check-label" htmlFor={`dog-${index}`}>
-                                {dog.name} - {dog.breed}
+                            <label className="form-check-label" htmlFor={`product-${index}`}>
+                                {product.name} - ${product.price}
                             </label>
                         </div>
                     ))}
                 </div>
                 
-                <h6>Role:</h6>
-                <div className="mb-3">
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input"
-                            type="radio"
-                            name="roleOption"
-                            id="Specialist"
-                            value="Specialist"
-                            checked={roleOption === 'Specialist'}
-                            onChange={(event) => setRoleOption(event.target.value)}
-                        />
-                        <label className="form-check-label" htmlFor="Specialist">Specialist</label>
-                    </div>
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input"
-                            type="radio"
-                            name="roleOption"
-                            id="Merchant"
-                            value="Merchant"
-                            checked={roleOption === 'Merchant'}
-                            onChange={(event) => setRoleOption(event.target.value)}
-                        />
-                        <label className="form-check-label" htmlFor="Merchant">Merchant</label>
-                    </div>
-                </div>
+                <h6>Dog Breed Target:</h6>
+            <div className="mb-3">
+                <select 
+                    value={dogBreed} 
+                    onChange={(event) => setDogBreed(event.target.value)} 
+                    className="form-control"
+                >
+                    <option value="Labrador">Labrador</option>
+                    <option value="Golden Retriever">Golden Retriever</option>
+                    <option value="German Shepherd">German Shepherd</option>
+                    <option value="Poodle">Poodle</option>
+                    <option value="Bulldog">Bulldog</option>
+                    {/* ... You can add more dog breeds as options here */}
+                </select>
+            </div>
 
                 <input 
                     value={interest}
-                    placeholder="What are you interested in?"
+                    placeholder="What makes this product interesting?"
                     className="form-control mb-3"
                     onChange={(event) => setInterest(event.target.value)}
                 />

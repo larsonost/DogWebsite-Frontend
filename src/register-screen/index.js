@@ -105,7 +105,7 @@ function RegisterScreen() {
                     value="Merchant"
                     onChange={handleRoleChange}
                   />
-                  <label className="form-check-label" htmlFor="merchant">Seller</label>
+                  <label className="form-check-label" htmlFor="merchant">Merchant</label>
                 </div>
                 <div className="form-check">
                   <input
@@ -124,24 +124,24 @@ function RegisterScreen() {
               {role === "Owner" && (
                 <div className="mb-3">
                 {/* Add any additional fields required for Sellers here */}
-                <label htmlFor="dogname" className="form-label">Shop Name</label>
-                <input type="text" className="form-control" id="dogname" placeholder="Enter d name" value={dogname}
+                <label htmlFor="dogname" className="form-label">Dog Name</label>
+                <input type="text" className="form-control" id="dogname" placeholder="Enter dog name" value={dogname}
                   onChange={(e) => setDogName(e.target.value)} />
 
-                <label htmlFor="dogbreed" className="form-label">Shop Name</label>
-                <input type="text" className="form-control" id="dogbreed" placeholder="Enter d name"  value={dogbreed}
+                <label htmlFor="dogbreed" className="form-label">Dog Breed</label>
+                <input type="text" className="form-control" id="dogbreed" placeholder="Enter dog breed"  value={dogbreed}
                   onChange={(e) => setDogBreed(e.target.value)} />
               </div>
               )}
               {role === "Merchant" && (
                 <div className="mb-3">
                   {/* Add any additional fields required for Sellers here */}
-                  <label htmlFor="productname" className="form-label">Shop Name</label>
-                  <input type="text" className="form-control" id="productname" placeholder="Enter p name" value={productname}
+                  <label htmlFor="productname" className="form-label">Product Name</label>
+                  <input type="text" className="form-control" id="productname" placeholder="Enter product name" value={productname}
                     onChange={(e) => setProductName(e.target.value)} />
 
-                  <label htmlFor="productprice" className="form-label">Shop Name</label>
-                  <input type="text" className="form-control" id="productprice" placeholder="Enter p name"  value={productprice}
+                  <label htmlFor="productprice" className="form-label">Product Price</label>
+                  <input type="text" className="form-control" id="productprice" placeholder="Enter product price"  value={productprice}
                     onChange={(e) => setProductPrice(e.target.value)} />
                 </div>
               )}

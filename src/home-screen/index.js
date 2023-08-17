@@ -53,7 +53,6 @@ function HomeScreen() {
               {/* Changed the wording of the sub-heading */}
             </div>
             <div>
-      <button onClick={printCurrentUserDogs}>Print Current User's Dogs</button>
     </div>
             <div>
             </div>
