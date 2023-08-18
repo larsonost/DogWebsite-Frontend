@@ -6,6 +6,7 @@ import SpecialistTuit from '../tuits/tuit-items/specialist-item';
 import { Link, useLocation } from "react-router-dom";
 import { findTuitsThunk } from "../services/tuits-thunks";
 import { useDispatch, useSelector } from "react-redux";
+import logo from "../images/logo-new.png";
 
 function NavigationSidebar() {
       const { currentUser } = useSelector((state) => state.user);
@@ -22,9 +23,25 @@ function NavigationSidebar() {
       const activeLink = (linkPath) => {
             return pathname.startsWith(linkPath);
       };
+      const toggleTheme = () => {
+            document.body.classList.toggle("dark-mode");
+          };
 
       return (
             <div className="container">
+                  <div className="row">
+                        <div>
+                              <img
+                                    id="logo"
+                                    src={logo}
+                                    alt="logo"
+                                    className="logo img-fluid rounded-circle"
+                                    onClick={toggleTheme}
+                              />
+                              {/* made the size of the image fluid, so it won't overflow when the screen is small */}
+                        </div>
+                  </div>
+                  <br/>
                   <div className="row">
                         <div className="col-12">
                               <div className="list-group">
@@ -44,7 +61,7 @@ function NavigationSidebar() {
                         </div>
                   </div>
                   {
-                        pathname.endsWith("/home") && 
+                        pathname.endsWith("/home") &&
                         <div className="row mt-3">
                               <div className="col-12">
                                     <ul className="list-group">
