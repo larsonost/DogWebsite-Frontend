@@ -24,7 +24,6 @@ const TuitsList = () => {
 
 <div className="waterfall">
     {[...tuits].reverse().map((tuit) => {
-      console.log(tuit.role)
       switch(tuit.role) {
         case 'owner':
         case 'Owner':

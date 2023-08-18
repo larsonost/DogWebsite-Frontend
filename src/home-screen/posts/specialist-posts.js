@@ -11,7 +11,7 @@ import {BiBold, BiItalic} from "react-icons/bi";
 import {createTuitThunk} from "../../services/tuits-thunks";
 import { useDispatch } from "react-redux";
 
-const OwnerPosts = () => {
+const SpecialistPosts = () => {
     const [dogBreed, setDogBreed] = useState('');
     const [whatsHappening, setWhatsHappening] = useState('');
     const [title, setTitle] = useState('');
@@ -36,8 +36,7 @@ const OwnerPosts = () => {
             title: title,
             role: "Specialist",
             interest: interest,
-            selectedproductName: selectedproduct.name,
-            selectedproductPrice: selectedproduct.price,
+            service: service,
             dogBreedTarget: dogBreed 
         };
         dispatch(createTuitThunk(newTuit));
@@ -107,4 +106,4 @@ const OwnerPosts = () => {
         </div>
     );
 }
-export default OwnerPosts;
+export default SpecialistPosts;

@@ -1,0 +1,21 @@
+/* tuit-item.css */
+.tuit-ededed {
+    background-color: #dfdfdf; /* light gray background */
+    padding: 10px;
+    margin-bottom: 10px; /* spacing between each item in the list */
+    border-radius: 5px;
+    border: 1px solid black;
+  }
+  
+  .tuit-title {
+    color: black; /* black title text */
+    font-weight: bold;
+  }
+  
+  .row-padding {
+    margin: 10px 0; /* adding some vertical spacing */
+  }
+  
+  .icon-space {
+    margin-right: 8px; /* spacing between the icon and number */
+  }

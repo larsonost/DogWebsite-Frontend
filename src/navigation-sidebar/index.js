@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-import TuitItem from "../tuits/tuit-items/tuit-item";
-import OwnerTuit from '../tuits/tuit-items/owner-item';
-import MerchantTuit from '../tuits/tuit-items/merchant-item';
-import SpecialistTuit from '../tuits/tuit-items/specialist-item';
+import PreviewTuit from "./preview-tuit/preview-tuit";
 import { Link, useLocation } from "react-router-dom";
 import { findTuitsThunk } from "../services/tuits-thunks";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,7 +18,7 @@ function NavigationSidebar() {
       };
       const toggleTheme = () => {
             document.body.classList.toggle("dark-mode");
-          };
+      };
 
       return (
             <div className="container">
@@ -37,7 +34,7 @@ function NavigationSidebar() {
                               {/* made the size of the image fluid, so it won't overflow when the screen is small */}
                         </div>
                   </div>
-                  <br/>
+                  <br />
                   <div className="row">
                         <div className="col-12">
                               <div className="list-group">
@@ -56,10 +53,23 @@ function NavigationSidebar() {
                               </div>
                         </div>
                   </div>
+                  <br />
+                  {
+                        currentUser?.data?.username &&
+                        [...tuits].reverse().filter(tuit => tuit.username === currentUser.data.username).length > 0 && (
+                              <div className="d-flex justify-content-center align-items-center">
+                                    <b>Your recent posts!</b>
+                              </div>
+                        )
+                  }
+
+
+
                   {
                         pathname.endsWith("/home") &&
                         <div className="row mt-3">
                               <div className="col-12">
+
                                     <ul className="list-group">
                                           {loading &&
                                                 <li className="list-group-item">
@@ -69,19 +79,8 @@ function NavigationSidebar() {
                                           <div>
                                                 {
                                                       currentUser && [...tuits].reverse().filter(tuit => tuit.username === currentUser.data.username).map((tuit) => {
-                                                            switch (tuit.role) {
-                                                                  case 'owner':
-                                                                  case 'Owner':
-                                                                        return <OwnerTuit key={tuit._id} tuit={tuit} />;
-                                                                  case 'merchant':
-                                                                  case 'Merchant':
-                                                                        return <MerchantTuit key={tuit._id} tuit={tuit} />;
-                                                                  case 'specialist':
-                                                                  case 'Specialist':
-                                                                        return <SpecialistTuit key={tuit._id} tuit={tuit} />;
-                                                                  default:
-                                                                        return <TuitItem key={tuit._id} tuit={tuit} />;
-                                                            }
+                                                            return <PreviewTuit key={tuit._id} tuit={tuit} />;
+
                                                       })
                                                 }
                                           </div>

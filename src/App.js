@@ -26,10 +26,10 @@ function App() {
           container: with margin */}
           <br></br>
           <div className="row">
-            <div className="col-2 col-md-2 col-lg-2 d-flex justify-content-center">
+            <div className="col-1 col-md-2 col-lg-2 d-flex justify-content-center">
               <NavigationSidebar />
             </div>
-            <div className="col-10 col-md-10 col-lg-10">
+            <div className="col-11 col-md-10 col-lg-10">
               <Routes>
                 <Route path="/" element={<Navigate to="/home" />} />
                 <Route path="/home/*" element={<HomeScreen />} />
