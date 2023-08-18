@@ -3,14 +3,14 @@ import { useDispatch } from "react-redux";
 import { FaTwitter, FaCheck, FaTimes } from "react-icons/fa";
 import TuitStats from "../tuit-stats";
 import "./tuit-item.css";
-import { deleteTuit } from "../../reducers/tuits-reducer";
+import {deleteTuitThunk} from "../../services/tuits-thunks"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const SpecialistTuit = ({ tuit }) => {
   const dispatch = useDispatch();
   const deleteTuitHandler = (id) => {
-    dispatch(deleteTuit(id));
-  };
+    dispatch(deleteTuitThunk(id));
+}
   return (
     <div className="tuit-item bg-danger">
       <li className="list-group-item bg-danger">
