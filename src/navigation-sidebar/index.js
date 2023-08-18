@@ -14,10 +14,6 @@ function NavigationSidebar() {
       console.log(tuits)
       const { pathname } = useLocation();
       const [ignore, active] = pathname.split("/");
-      console.log("logged in username:")
-      if (currentUser) {
-            console.log(currentUser.data.username);
-      }
       //console.log(userTuits)
       // Snippet given by chatGPT to find the active link
       const activeLink = (linkPath) => {
