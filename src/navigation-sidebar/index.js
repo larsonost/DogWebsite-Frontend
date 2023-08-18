@@ -43,38 +43,39 @@ function NavigationSidebar() {
                               </div>
                         </div>
                   </div>
-                  <div className="row mt-3">  {/* Add margin-top for spacing */}
-                        <div className="col-12">
-                              <ul className="list-group">
-                                    {loading &&
-                                          <li className="list-group-item">
-                                                Loading...
-                                          </li>
-                                    }
-
-                                    <div>
-                                          {
-                                                currentUser && [...tuits].reverse().filter(tuit => tuit.username === currentUser.data.username).map((tuit) => {
-                                                      console.log(tuit.role);
-                                                      switch (tuit.role) {
-                                                            case 'owner':
-                                                            case 'Owner':
-                                                                  return <OwnerTuit key={tuit._id} tuit={tuit} />
-                                                            case 'merchant':
-                                                            case 'Merchant':
-                                                                  return <MerchantTuit key={tuit._id} tuit={tuit} />
-                                                            case 'specialist':
-                                                            case 'Specialist':
-                                                                  return <SpecialistTuit key={tuit._id} tuit={tuit} />
-                                                            default:
-                                                                  return <TuitItem key={tuit._id} tuit={tuit} />
-                                                      }
-                                                })
+                  {
+                        pathname.endsWith("/home") && 
+                        <div className="row mt-3">
+                              <div className="col-12">
+                                    <ul className="list-group">
+                                          {loading &&
+                                                <li className="list-group-item">
+                                                      Loading...
+                                                </li>
                                           }
-                                    </div>
-                              </ul>
+                                          <div>
+                                                {
+                                                      currentUser && [...tuits].reverse().filter(tuit => tuit.username === currentUser.data.username).map((tuit) => {
+                                                            switch (tuit.role) {
+                                                                  case 'owner':
+                                                                  case 'Owner':
+                                                                        return <OwnerTuit key={tuit._id} tuit={tuit} />;
+                                                                  case 'merchant':
+                                                                  case 'Merchant':
+                                                                        return <MerchantTuit key={tuit._id} tuit={tuit} />;
+                                                                  case 'specialist':
+                                                                  case 'Specialist':
+                                                                        return <SpecialistTuit key={tuit._id} tuit={tuit} />;
+                                                                  default:
+                                                                        return <TuitItem key={tuit._id} tuit={tuit} />;
+                                                            }
+                                                      })
+                                                }
+                                          </div>
+                                    </ul>
+                              </div>
                         </div>
-                  </div>
+                  }
             </div>
       );
 };
