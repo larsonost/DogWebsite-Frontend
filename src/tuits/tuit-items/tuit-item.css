@@ -4,6 +4,9 @@
     display: inline-flex;
     align-items: center;
   }
+  .bg-lighter-danger {
+    background-color: rgba(220, 53, 69, 0.7); /* A slightly less intense shade of red */
+}
 
 
   .row-padding{

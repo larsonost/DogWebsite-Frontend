@@ -47,15 +47,11 @@ const TuitStats = ({ tuit }) => {
     //portions of the style/icon were given by chatGPT
     return (
         <div className="row alignment">
-            <div className="col-2">
-                <LiaCommentDotsSolid /> {tuit.replies}
-            </div>
-            <div className="col-2">
-                <FaRetweet /> {tuit.retuits}
-            </div>
             <div className="col-3 d-flex align-items-center" onClick={handleLikeToggle}><FontAwesomeIcon
                 icon={faHeart}
-                style={{ color: liked ? "red" : "black" }}
+                style={{ 
+                    color: liked ? "red" : "black"
+                }}
                 className="icon-space"
             />
                     {likesNum}
@@ -63,13 +59,11 @@ const TuitStats = ({ tuit }) => {
             <div className="col-3 d-flex align-items-center" onClick={handleDisLikeToggle}><FontAwesomeIcon
 
                 icon={faThumbsDown}
-                style={{ color: disliked ? "blue" : "black" }}
+                style={{ color: disliked ? "blue" : "black" ,
+                paddingLeft: "20px"}}
                 className="icon-space"
             />
                 {dislikesNum}
-            </div>
-            <div className="col-2">
-                <AiOutlineUpload />
             </div>
         </div>
     );

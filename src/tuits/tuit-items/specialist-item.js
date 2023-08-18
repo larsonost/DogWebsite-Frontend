@@ -3,37 +3,27 @@ import { useDispatch } from "react-redux";
 import { FaTwitter, FaCheck, FaTimes } from "react-icons/fa";
 import TuitStats from "../tuit-stats";
 import "./tuit-item.css";
-import {deleteTuitThunk} from "../../services/tuits-thunks"
+import { deleteTuitThunk } from "../../services/tuits-thunks"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const SpecialistTuit = ({ tuit }) => {
   const dispatch = useDispatch();
-  const deleteTuitHandler = (id) => {
-    dispatch(deleteTuitThunk(id));
-}
+  console.log(tuit.firstname)
+  const USERNAME = tuit.username
   return (
     <div className="tuit-item bg-danger">
       <li className="list-group-item bg-danger">
         <div className="row">
           <div className="col-1">
-            <img
-              className="rounded-circle"
-              height={48}
-              src={`/images/${tuit.image}`}
-            />
           </div>
           <div className="col-10">
-            <div
-              className="delete-button"
-              onClick={() => deleteTuitHandler(tuit._id)}
-            >
-              <FaTimes className="delete-icon" />
+            <div className="fs-5">
+            <FaCheck className="checkmark-icon" />{" "}
+              <b>{USERNAME}</b> - {tuit.role} 
             </div>
-            <div>
-              <b>{tuit.userName}</b> <FaCheck className="checkmark-icon" />{" "}
-              {tuit.time}
+            <div >
+              {tuit.tuit}
             </div>
-            <div >{tuit.tuit}</div>
             <div className="row-padding">
               <TuitStats tuit={tuit} />
             </div>

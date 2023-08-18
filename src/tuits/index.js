@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const TuitsList = () => {
   const { tuits, loading } = useSelector(state => state.tuits)
+  
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(findTuitsThunk())
