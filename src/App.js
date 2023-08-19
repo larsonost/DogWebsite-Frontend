@@ -1,5 +1,6 @@
 import { BrowserRouter, HashRouter, useLocation } from "react-router-dom";
 import HomeScreen from "./home-screen";
+import ProfileOthers from "./profile-screen/profile-others";
 import RegisterScreen from "./register-screen";
 import NavigationSidebar from "./navigation-sidebar";
 import SearchResult from "./search result";
@@ -38,6 +39,7 @@ function App() {
                 <Route path="/profile/*" element={<Profile />} />
                 <Route path="/details" element={<DetailContent />} />
                 <Route path="/search" element={<SearchResult />} />
+                <Route path="profile/:userId" element={<ProfileOthers />} />
               </Routes>
             </div>
           </div>
