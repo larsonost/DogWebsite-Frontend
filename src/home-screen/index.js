@@ -23,21 +23,22 @@ function HomeScreen() {
     console.log(currentUser.data.dogs.length);
   };
   let UserSpecificPosts;
+  const USERNAME = currentUser.data.username;
 
   if (!currentUser) {
     UserSpecificPosts = <GuestPosts />;
-} else {
+  } else {
     let userRole = currentUser.data.role.toLowerCase();
     if (userRole === "owner") {
-        UserSpecificPosts = <OwnerPosts />;
+      UserSpecificPosts = <OwnerPosts />;
     } else if (userRole === "merchant") {
-        UserSpecificPosts = <MerchantPosts />;
+      UserSpecificPosts = <MerchantPosts />;
     } else if (userRole === "specialist") {
-        UserSpecificPosts = <SpecialistPosts />;
+      UserSpecificPosts = <SpecialistPosts />;
     } else {
-        UserSpecificPosts = null;  // or a default content if needed
+      UserSpecificPosts = null;  // or a default content if needed
     }
-}
+  }
   return (
     <div className="container-fluid">
       <div className="row">
@@ -53,7 +54,7 @@ function HomeScreen() {
               {/* Changed the wording of the sub-heading */}
             </div>
             <div>
-    </div>
+            </div>
             <div>
             </div>
           </div>
@@ -69,72 +70,81 @@ function HomeScreen() {
           larger screens. */}
 
           {/* corgi*/}
-          <div className="corgi-container">
-            <div className="wrapper">
-              <div className="wave"></div>
-            </div>
-            <div className="corgi-wrapper mt-4 d-flex justify-content-center">
-              {/* corgi icon */}
-              <br /> <br />
-              <div className="corgi">
-                <div className="head">
-                  <div className="ear ear--r"></div>
-                  <div className="ear ear--l"></div>
-
-                  <div className="eye eye--left"></div>
-                  <div className="eye eye--right"></div>
-
-                  <div className="face">
-                    <div className="face__white">
-                      <div className=" face__orange face__orange--l"></div>
-                      <div className=" face__orange face__orange--r"></div>
-                    </div>
-                  </div>
-
-                  <div className="face__curve"></div>
-
-                  <div className="mouth">
-                    <div className="nose"></div>
-                    <div className="mouth__left">
-                      <div className="mouth__left--round"></div>
-                      <div className="mouth__left--sharp"></div>
-                    </div>
-
-                    <div className="lowerjaw">
-                      <div className="lips"></div>
-                      <div className="tongue test"></div>
-                    </div>
-
-                    <div className="snout"></div>
-                  </div>
-                </div>
-
-                <div className="neck__back"></div>
-                <div className="neck__front"></div>
-
-                <div className="body">
-                  <div className="body__chest"></div>
-                </div>
-
-                <div className="foot foot__left foot__front foot__1"></div>
-                <div className="foot foot__right foot__front foot__2"></div>
-                <div className="foot foot__left foot__back foot__3"></div>
-                <div className="foot foot__right foot__back foot__4"></div>
-
-                <div className="tail test"></div>
+          {!currentUser ? (
+            <div className="corgi-container">
+              <div className="wrapper">
+                <div className="wave"></div>
               </div>
-            </div>
-            <div className="surfboard-button-container mb-3">
+              <div className="corgi-wrapper mt-4 d-flex justify-content-center">
+                {/* corgi icon */}
+                <br /> <br />
+                <div className="corgi">
+                  <div className="head">
+                    <div className="ear ear--r"></div>
+                    <div className="ear ear--l"></div>
+
+                    <div className="eye eye--left"></div>
+                    <div className="eye eye--right"></div>
+
+                    <div className="face">
+                      <div className="face__white">
+                        <div className=" face__orange face__orange--l"></div>
+                        <div className=" face__orange face__orange--r"></div>
+                      </div>
+                    </div>
+
+                    <div className="face__curve"></div>
+
+                    <div className="mouth">
+                      <div className="nose"></div>
+                      <div className="mouth__left">
+                        <div className="mouth__left--round"></div>
+                        <div className="mouth__left--sharp"></div>
+                      </div>
+
+                      <div className="lowerjaw">
+                        <div className="lips"></div>
+                        <div className="tongue test"></div>
+                      </div>
+
+                      <div className="snout"></div>
+                    </div>
+                  </div>
+
+                  <div className="neck__back"></div>
+                  <div className="neck__front"></div>
+
+                  <div className="body">
+                    <div className="body__chest"></div>
+                  </div>
+
+                  <div className="foot foot__left foot__front foot__1"></div>
+                  <div className="foot foot__right foot__front foot__2"></div>
+                  <div className="foot foot__left foot__back foot__3"></div>
+                  <div className="foot foot__right foot__back foot__4"></div>
+
+                  <div className="tail test"></div>
+                </div>
+              </div>
+              <div className="surfboard-button-container mb-3">
                 <Link to="/login" className="surfboard-button">
                   <i className="fas fa-paw"></i> Login or Register <i className="fas fa-paw"></i>
                 </Link>
               </div>
-          </div>
+            </div>
+            ) : (
+              <div class="text-center font-weight-bold display-6">
+    <b>Logged in as {currentUser.data.username}</b>
+</div>
+
+
+    )}
           {/* coggi icon */}
 
           {/* <p className="text-center">Need an account? Sign in or join below!</p> */}
 
           <div className="d-flex justify-content-center dog-of-day-title">
+            <br></br>
             Dog of the Day !
           </div>
           <div className="d-flex justify-content-center">

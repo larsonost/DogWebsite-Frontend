@@ -28,7 +28,9 @@ function App() {
           <br></br>
           <div className="row">
             <div className="col-1 col-md-2 col-lg-2 d-flex justify-content-center">
-              <NavigationSidebar />
+            <div className="d-none d-md-block">
+                <NavigationSidebar />
+              </div>
             </div>
             <div className="col-11 col-md-10 col-lg-10">
               <Routes>

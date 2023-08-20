@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import ownerProfile from "./ownerProfile.jpg";
 import { useSelector } from "react-redux";
-import {AiOutlinePicture} from "react-icons/ai";
-import {MdFormatListBulleted} from "react-icons/md";
-import {HiOutlineGif} from "react-icons/hi2";
-import {TbCalendarStats} from "react-icons/tb";
-import {BsEmojiSmile} from "react-icons/bs";
-import {HiOutlineLocationMarker} from "react-icons/hi";
-import {BiBold, BiItalic} from "react-icons/bi";
-import {createTuitThunk} from "../../services/tuits-thunks";
+import { AiOutlinePicture } from "react-icons/ai";
+import { MdFormatListBulleted } from "react-icons/md";
+import { HiOutlineGif } from "react-icons/hi2";
+import { TbCalendarStats } from "react-icons/tb";
+import { BsEmojiSmile } from "react-icons/bs";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { BiBold, BiItalic } from "react-icons/bi";
+import { createTuitThunk } from "../../services/tuits-thunks";
 import { useDispatch } from "react-redux";
 
 const OwnerPosts = () => {
@@ -47,85 +47,78 @@ const OwnerPosts = () => {
 
     return (
         <div className="row mt-4">
-            <div className="col-md-2 text-center">
+            <div className="col-md-2 text-center d-none d-lg-block">
                 <img src={ownerProfile} width={90} alt="Owner Profile" className="rounded-circle mb-3" />
             </div>
-            
+
             <div className="col-md-10">
+                <h6>Create your post:</h6>
                 <input
                     value={title}
                     placeholder="Post Title"
                     className="form-control mb-2"
                     onChange={(event) => setTitle(event.target.value)}
                 />
-                <textarea 
+                <textarea
                     value={whatsHappening}
-                    placeholder="Owner Posts"
+                    placeholder="Post Body"
                     className="form-control border-0 mb-3"
                     rows="3"
                     onChange={(event) => setWhatsHappening(event.target.value)}
                 ></textarea>
-                
-                <h6>Your Dog:</h6>
-                <div className="mb-3">
+
+                <h6>Which dog are you posting about?</h6>
+                <div className="mb-3 d-flex flex-wrap">
                     {dogs.map((dog, index) => (
-                        <div className="form-check" key={index}>
-                            <input 
-                                className="form-check-input"
-                                type="radio"
-                                name="selectedDog"
-                                id={`dog-${index}`}
-                                value={dog.name}
-                                onChange={() => setSelectedDog(dog)}
-                            />
-                            <label className="form-check-label" htmlFor={`dog-${index}`}>
-                                {dog.name} - {dog.breed}
-                            </label>
-                        </div>
+                        <button
+                            key={index}
+                            type="button"
+                            style={{ marginRight: "10px" }}
+                            className={`btn ${selectedDog === dog ? 'btn-primary' : 'btn-secondary'} mr-2 mb-2`}
+                            onClick={() => setSelectedDog(dog)}
+                        >
+                            {dog.name} - {dog.breed}
+                        </button>
                     ))}
                 </div>
-                
-                <h6>Role:</h6>
-                <div className="mb-3">
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input"
-                            type="radio"
-                            name="roleOption"
-                            id="Specialist"
-                            value="Specialist"
-                            checked={roleOption === 'Specialist'}
-                            onChange={(event) => setRoleOption(event.target.value)}
-                        />
-                        <label className="form-check-label" htmlFor="Specialist">Specialist</label>
-                    </div>
-                    <div className="form-check">
-                        <input 
-                            className="form-check-input"
-                            type="radio"
-                            name="roleOption"
-                            id="Merchant"
-                            value="Merchant"
-                            checked={roleOption === 'Merchant'}
-                            onChange={(event) => setRoleOption(event.target.value)}
-                        />
-                        <label className="form-check-label" htmlFor="Merchant">Merchant</label>
-                    </div>
+
+
+                <h6>What role are you seeking?</h6>
+                <div className="mb-3 d-flex flex-wrap">
+                    <button
+                        type="button"
+                        style={{ marginRight: "10px" }}
+                        className={`btn ${roleOption === 'Specialist' ? 'btn-primary' : 'btn-secondary'} mb-2`}
+                        onClick={() => setRoleOption('Specialist')}
+                    >
+                        Specialist
+                    </button>
+
+                    <button
+                        type="button"
+                        className={`btn ${roleOption === 'Merchant' ? 'btn-primary' : 'btn-secondary'} mb-2`}
+                        onClick={() => setRoleOption('Merchant')}
+                    >
+                        Merchant
+                    </button>
                 </div>
 
-                <input 
+
+
+                <h6>What are you looking for?</h6>
+                <input
                     value={interest}
-                    placeholder="What are you interested in?"
+                    placeholder="Service/product interest..."
                     className="form-control mb-3"
                     onChange={(event) => setInterest(event.target.value)}
                 />
-                
+
                 <div>
-                    <button 
+                    <button
                         className="rounded-pill btn btn-primary fw-bold"
                         onClick={tuitClickHandler}
                     >
-                        Tuit
+                        Create Post!
                     </button>
                 </div>
             </div>

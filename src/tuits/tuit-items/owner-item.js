@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { FaTwitter, FaCheck, FaTimes } from "react-icons/fa";
+import { FaTwitter, FaCheck, FaTimes, FaDog } from "react-icons/fa";
 import TuitStats from "../tuit-stats";
 import "./tuit-item.css";
 import {deleteTuitThunk} from "../../services/tuits-thunks"
@@ -12,6 +12,30 @@ const OwnerTuit = ({ tuit }) => {
     dispatch(deleteTuitThunk(id));
 }
 const USERNAME = tuit.username
+return (
+  <div className="tuit-item-owner border rounded p-3 my-2" style={{ backgroundColor: 'rgba(255, 200, 200, 1)' }}>
+    <div className="d-flex justify-content-between align-items-center">
+      <div className="d-flex align-items-center">
+      <FaDog style={{ marginRight: '10px' }} />
+        <h5 className="mb-0">{tuit.username}</h5>
+        <span className="ml-2 badge badge-custom">{tuit.role}</span>
+      </div>
+      
+      <small className="text-muted">{tuit.time}</small>
+      
+    </div>
+    <hr />
+    <b>Seeking a {tuit.seekingrole} for my {tuit.selectedDogBreed}, {tuit.selectedDogName}</b>
+    <hr />
+    <h6 className="mt-2">{tuit.title}</h6>
+    <p>{tuit.tuit}</p>
+    
+    <div className="mt-3">
+      <TuitStats tuit={tuit} />
+    </div>
+  </div>
+);
+/*
   return (
     <div className="tuit-item bg-success">
       <li className="list-group-item bg-success">
@@ -34,5 +58,6 @@ const USERNAME = tuit.username
       </li>
     </div>
   );
+  */
 };
 export default OwnerTuit;

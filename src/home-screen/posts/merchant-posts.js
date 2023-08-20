@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import merchantProfile from "./merchantProfile.jpg";
 import { useSelector } from "react-redux";
-import {AiOutlinePicture} from "react-icons/ai";
-import {MdFormatListBulleted} from "react-icons/md";
-import {HiOutlineGif} from "react-icons/hi2";
-import {TbCalendarStats} from "react-icons/tb";
-import {BsEmojiSmile} from "react-icons/bs";
-import {HiOutlineLocationMarker} from "react-icons/hi";
-import {BiBold, BiItalic} from "react-icons/bi";
-import {createTuitThunk} from "../../services/tuits-thunks";
+import { AiOutlinePicture } from "react-icons/ai";
+import { MdFormatListBulleted } from "react-icons/md";
+import { HiOutlineGif } from "react-icons/hi2";
+import { TbCalendarStats } from "react-icons/tb";
+import { BsEmojiSmile } from "react-icons/bs";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { BiBold, BiItalic } from "react-icons/bi";
+import { createTuitThunk } from "../../services/tuits-thunks";
 import { useDispatch } from "react-redux";
 
 const MerchantPosts = () => {
@@ -38,7 +38,7 @@ const MerchantPosts = () => {
             interest: interest,
             selectedproductName: selectedproduct.name,
             selectedproductPrice: selectedproduct.price,
-            dogBreedTarget: dogBreed 
+            dogBreedTarget: dogBreed
         };
         dispatch(createTuitThunk(newTuit));
         setWhatsHappening("");
@@ -48,73 +48,55 @@ const MerchantPosts = () => {
 
     return (
         <div className="row mt-4">
-            <div className="col-md-2 text-center">
+            <div className="col-md-2 text-center d-none d-lg-block">
                 <img src={merchantProfile} width={90} alt="merchant Profile" className="rounded-circle mb-3" />
             </div>
-            
+
             <div className="col-md-10">
+                <h6>Create your post:</h6>
                 <input
                     value={title}
                     placeholder="Post Title"
                     className="form-control mb-2"
                     onChange={(event) => setTitle(event.target.value)}
                 />
-                <textarea 
+                <textarea
                     value={whatsHappening}
                     placeholder="Post body"
                     className="form-control border-0 mb-3"
                     rows="3"
                     onChange={(event) => setWhatsHappening(event.target.value)}
                 ></textarea>
-                
+
                 <h6>Your Products:</h6>
-                <div className="mb-3">
+                <div className="mb-3 d-flex flex-wrap">
                     {products.map((product, index) => (
-                        <div className="form-check" key={index}>
-                            <input 
-                                className="form-check-input"
-                                type="radio"
-                                name="selectedproduct"
-                                id={`product-${index}`}
-                                value={product.name}
-                                onChange={() => setSelectedproduct(product)}
-                            />
-                            <label className="form-check-label" htmlFor={`product-${index}`}>
-                                {product.name} - ${product.price}
-                            </label>
-                        </div>
+                        <button
+                            key={index}
+                            type="button"
+                            style={{ marginRight: "10px" }}
+                            className={`btn ${selectedproduct === product ? 'btn-primary' : 'btn-secondary'} mr-2 mb-2`}
+                            onClick={() => setSelectedproduct(product)}
+                        >
+                            {product.name} - ${product.price}
+                        </button>
                     ))}
                 </div>
-                
-                <h6>Dog Breed Target:</h6>
-            <div className="mb-3">
-                <select 
-                    value={dogBreed} 
-                    onChange={(event) => setDogBreed(event.target.value)} 
-                    className="form-control"
-                >
-                    <option value="Labrador">Labrador</option>
-                    <option value="Golden Retriever">Golden Retriever</option>
-                    <option value="German Shepherd">German Shepherd</option>
-                    <option value="Poodle">Poodle</option>
-                    <option value="Bulldog">Bulldog</option>
-                    {/* ... You can add more dog breeds as options here */}
-                </select>
-            </div>
+                <h6>Why is this product interesting?</h6>
 
-                <input 
+                <input
                     value={interest}
-                    placeholder="What makes this product interesting?"
+                    placeholder="Interesting Features"
                     className="form-control mb-3"
                     onChange={(event) => setInterest(event.target.value)}
                 />
-                
+
                 <div>
-                    <button 
+                    <button
                         className="rounded-pill btn btn-primary fw-bold"
                         onClick={tuitClickHandler}
                     >
-                        Tuit
+                        Create Post!
                     </button>
                 </div>
             </div>

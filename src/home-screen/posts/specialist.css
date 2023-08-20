@@ -1,0 +1,16 @@
+.service-container h6 {
+}
+
+.service-button {
+    display: inline-block; /* Allows for setting padding */
+    padding: 10px 15px; /* Provides spacing inside the "button" */
+    margin-bottom: 3px; /* Adds a margin below for separation */
+    background-color: #007BFF; /* A shade of blue */
+    color: #FFFFFF; /* White text color */
+    border-radius: 5px; /* Gives rounded corners to the "button" */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.service-button:hover {
+    background-color: #0056b3; /* A darker shade of blue for hover */
+}
