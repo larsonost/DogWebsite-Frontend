@@ -23,7 +23,7 @@ function HomeScreen() {
     console.log(currentUser.data.dogs.length);
   };
   let UserSpecificPosts;
-  const USERNAME = currentUser.data.username;
+  //const USERNAME = currentUser.data.username;
 
   if (!currentUser) {
     UserSpecificPosts = <GuestPosts />;
@@ -132,13 +132,13 @@ function HomeScreen() {
                 </Link>
               </div>
             </div>
-            ) : (
-              <div class="text-center font-weight-bold display-6">
-    <b>Logged in as {currentUser.data.username}</b>
-</div>
+          ) : (
+            <div class="text-center font-weight-bold display-6">
+              <b>Logged in as {currentUser.data.username}</b>
+            </div>
 
 
-    )}
+          )}
           {/* coggi icon */}
 
           {/* <p className="text-center">Need an account? Sign in or join below!</p> */}
