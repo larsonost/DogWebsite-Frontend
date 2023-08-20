@@ -19,6 +19,20 @@ function NavigationSidebar() {
       const toggleTheme = () => {
             document.body.classList.toggle("dark-mode");
       };
+      if (currentUser) {
+            console.log("THIS USER")
+            console.log(currentUser)
+      }
+      const getRole = (user) => {
+            if (user && user.data && user.data.role) {
+                  return user.data.role;
+            } else if (user && user.role) {
+                  return user.role;
+            }
+            return null;
+      };
+
+      const userRole = getRole(currentUser);
 
       return (
             <div className="container">
@@ -50,11 +64,27 @@ function NavigationSidebar() {
                                           to="/../register"> Register </Link>}
                                     {currentUser && <Link className={`list-group-item ${activeLink("/../profile") ? "active" : ""}`}
                                           to="/../profile"> Profile </Link>}
+                                    {userRole === "Specialist" && (
+                                          <Link
+                                                className={`list-group-item ${activeLink("/../client") ? "active" : ""}`}
+                                                to="/../client"
+                                          >
+                                                Client View
+                                          </Link>
+                                    )}
+                                    {userRole === "Merchant" && (
+                                          <Link
+                                                className={`list-group-item ${activeLink("/../competition") ? "active" : ""}`}
+                                                to="/../competition"
+                                          >
+                                                Competition
+                                          </Link>
+                                    )}
                               </div>
                         </div>
                   </div>
                   <br />
-                  {
+                  {pathname.endsWith("/home") &&
                         currentUser?.data?.username &&
                         [...tuits].reverse().filter(tuit => tuit.username === currentUser.data.username).length > 0 && (
                               <div className="d-flex justify-content-center align-items-center">
