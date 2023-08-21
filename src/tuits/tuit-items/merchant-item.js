@@ -7,6 +7,7 @@ import { deleteTuitThunk } from "../../services/tuits-thunks"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react';
+import { updateTuitThunk } from "../../services/tuits-thunks";
 
 const SERVER_API_URL = process.env.REACT_APP_SERVER_API_URL;
 const USERS_URL = `${SERVER_API_URL}/users`;
@@ -18,7 +19,23 @@ const MerchantTuit = ({ tuit }) => {
   }
   const [users, setUsers] = useState([]);
   const location = useLocation();
-
+  const [currentTuit, setCurrentTuit] = useState(tuit.tuit);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedTuit, setEditedTuit] = useState(tuit.tuit);
+  const startEditing = () => {
+    setIsEditing(true);
+  };
+  
+  const handleTuitChange = (e) => {
+    setEditedTuit(e.target.value);
+  };
+  
+  const submitTuit = () => {
+    const updatedTuit = { ...tuit, tuit: editedTuit };
+    dispatch(updateTuitThunk(updatedTuit)); // Dispatch the update thunk
+    setCurrentTuit(editedTuit);  // Update current tuit
+    setIsEditing(false);
+  };
 useEffect(() => {
   // Step 2: Fetch data
 
@@ -40,6 +57,8 @@ useEffect(() => {
   fetchUsers();
 }, []);
 console.log(users)
+const isProfilePage = location.pathname === "/profile";
+
 const user = users.find(user => user.username === tuit.username);
 const userId = user ? user._id : null;
   const USERNAME = tuit.username
@@ -66,7 +85,17 @@ const userId = user ? user._id : null;
       <p>{tuit.tuit}</p>
       <hr />
       <b>Product Features: </b> {tuit.interest}
-      
+      {
+        isEditing ? 
+          <>
+            <textarea value={editedTuit} onChange={handleTuitChange}></textarea>
+            {<button onClick={submitTuit}>Save</button>}
+          </> :
+          <>
+            <p>{currentTuit}</p>
+            {isProfilePage && <button onClick={startEditing}>Edit</button>}
+          </>
+      }
       <div className="mt-3">
         <TuitStats tuit={tuit} />
       </div>

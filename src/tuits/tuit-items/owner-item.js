@@ -22,7 +22,6 @@ const OwnerTuit = ({ tuit }) => {
 const [users, setUsers] = useState([]);
 const location = useLocation();
 const [currentTuit, setCurrentTuit] = useState(tuit.tuit);
-
 const [isEditing, setIsEditing] = useState(false);
 const [editedTuit, setEditedTuit] = useState(tuit.tuit);
 
