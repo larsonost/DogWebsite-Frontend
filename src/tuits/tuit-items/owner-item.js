@@ -45,7 +45,8 @@ const userId = user ? user._id : null;
 
 const USERNAME = tuit.username
 return (
-  <div className="tuit-item-owner border rounded p-3 my-2" style={{ backgroundColor: 'rgba(255, 200, 200, 1)' }}>
+  <div className="tuit-item-owner border rounded p-3 my-2" style={{ backgroundColor: 'rgba(255, 200, 200, 1)', position: 'relative'  }}>
+    <FaTimes onClick={() => deleteTuitHandler(tuit._id)} style={{ cursor: 'pointer', position: 'absolute', top: '10px', right: '10px' }} />
     <div className="d-flex justify-content-between align-items-center">
       <div className="d-flex align-items-center">
       <FaDog style={{ marginRight: '10px' }} />
@@ -69,6 +70,7 @@ return (
     
     <div className="mt-3">
       <TuitStats tuit={tuit} />
+      
     </div>
   </div>
 );
