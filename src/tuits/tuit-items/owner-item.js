@@ -5,7 +5,8 @@ import TuitStats from "../tuit-stats";
 import "./tuit-item.css";
 import {deleteTuitThunk} from "../../services/tuits-thunks"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
 import { useState, useEffect } from 'react';
 
 const SERVER_API_URL = process.env.REACT_APP_SERVER_API_URL;
@@ -18,6 +19,8 @@ const OwnerTuit = ({ tuit }) => {
     dispatch(deleteTuitThunk(id));
 }
 const [users, setUsers] = useState([]);
+const location = useLocation();
+
 
 useEffect(() => {
   // Step 2: Fetch data
@@ -46,7 +49,10 @@ const userId = user ? user._id : null;
 const USERNAME = tuit.username
 return (
   <div className="tuit-item-owner border rounded p-3 my-2" style={{ backgroundColor: 'rgba(255, 200, 200, 1)', position: 'relative'  }}>
-    <FaTimes onClick={() => deleteTuitHandler(tuit._id)} style={{ cursor: 'pointer', position: 'absolute', top: '10px', right: '10px' }} />
+    {
+        location.pathname === "/profile" &&
+        <FaTimes onClick={() => deleteTuitHandler(tuit._id)} style={{ cursor: 'pointer', position: 'absolute', top: '10px', right: '10px' }} />
+      }
     <div className="d-flex justify-content-between align-items-center">
       <div className="d-flex align-items-center">
       <FaDog style={{ marginRight: '10px' }} />

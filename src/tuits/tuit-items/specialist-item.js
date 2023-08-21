@@ -5,7 +5,7 @@ import TuitStats from "../tuit-stats";
 import "./tuit-item.css";
 import { deleteTuitThunk } from "../../services/tuits-thunks"
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 const SERVER_API_URL = process.env.REACT_APP_SERVER_API_URL;
@@ -16,6 +16,10 @@ const SpecialistTuit = ({ tuit }) => {
   console.log(tuit.firstname)
   const USERNAME = tuit.username
   const [users, setUsers] = useState([]);
+  const deleteTuitHandler = (id) => {
+    dispatch(deleteTuitThunk(id));
+}
+const location = useLocation();
   
 useEffect(() => {
   // Step 2: Fetch data
@@ -41,7 +45,11 @@ console.log(users)
 const user = users.find(user => user.username === tuit.username);
 const userId = user ? user._id : null;
   return (
-    <div className="tuit-item border rounded p-3 my-2" style={{ backgroundColor: 'rgba(255, 200, 200, 1)' }}>
+    <div className="tuit-item-owner border rounded p-3 my-2" style={{ backgroundColor: 'rgba(255, 200, 200, 1)', position: 'relative'  }}>
+    {
+        location.pathname === "/profile" &&
+        <FaTimes onClick={() => deleteTuitHandler(tuit._id)} style={{ cursor: 'pointer', position: 'absolute', top: '10px', right: '10px' }} />
+      }
       <div className="d-flex justify-content-between align-items-center">
         <div className="d-flex align-items-center">
         <FaPaw style={{ marginRight: '10px' }} />
