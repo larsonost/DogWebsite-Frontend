@@ -56,8 +56,6 @@ function NavigationSidebar() {
                                           to="/../home"> Home </Link>
                                     <Link className={`list-group-item ${activeLink("/../search") ? "active" : ""}`}
                                           to="/../search"> Search </Link>
-                                    <Link className={`list-group-item ${activeLink("/../details") ? "active" : ""}`}
-                                          to="/../details"> Details </Link>
                                     {!currentUser && <Link className={`list-group-item ${activeLink("/../login") ? "active" : ""}`}
                                           to="/../login"> Login </Link>}
                                     {!currentUser && <Link className={`list-group-item ${activeLink("/../register") ? "active" : ""}`}

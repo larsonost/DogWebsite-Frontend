@@ -26,6 +26,7 @@ function ProfileScreen() {
   return (
       <div>
         <h1>Profile Screen</h1>
+
         {profile && (<div>
               <div>
                 <label>First Name</label>

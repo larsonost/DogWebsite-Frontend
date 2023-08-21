@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './competition.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 const SERVER_API_URL = process.env.REACT_APP_SERVER_API_URL;
 const USERS_URL = `${SERVER_API_URL}/users`;
 const calculateStatistics = (products) => {
@@ -113,6 +114,13 @@ function CompetitionScreen() {
                     <li className="list-group-item"><i className="fa fa-dollar-sign mr-2 margin-right-icon"></i><strong>Average:</strong> ${average}</li>
                     <li className="list-group-item"><i className="fa fa-dollar-sign mr-2 margin-right-icon"></i><strong>Median:</strong> ${median}</li>
                 </ul>
+            </div>
+            <div className="list-group mt-4">
+                {merchants.map(merchant => (
+                    <Link className="list-group-item" to={`/profile/${merchant._id}`}>
+                        {merchant.firstName} {merchant.lastName}
+                    </Link>
+                ))}
             </div>
         </div>
     );

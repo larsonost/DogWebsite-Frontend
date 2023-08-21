@@ -1,6 +1,7 @@
 import { BrowserRouter, HashRouter, useLocation } from "react-router-dom";
 import HomeScreen from "./home-screen";
 import CompetitionScreen from "./competition-screen";
+import ProfileOthers from "./profile-screen/profile-others";
 import ClientScreen from "./client-screen";
 import RegisterScreen from "./register-screen";
 import NavigationSidebar from "./navigation-sidebar";
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/login" element={<LoginScreen />} />
                 <Route path="/register" element={<RegisterScreen />} />
                 <Route path="/profile/*" element={<Profile />} />
+                <Route path="profile/:userId" element={<ProfileOthers />} />
                 <Route path="/details/*" element={<Details />} />
                 <Route path="/search/*" element={<SearchResult />} />
                 <Route path="/competition" element={<CompetitionScreen />} />
