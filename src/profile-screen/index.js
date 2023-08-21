@@ -104,7 +104,16 @@ function ProfileScreen() {
       <h4 className="mt-4">Tuits</h4>
       <div className="waterfall">
         {relevantTuits.map((tuit) => {
-          // ... (same as in ProfileOthers)
+          switch (tuit.role) {
+            case 'Owner':
+              return <OwnerTuit key={tuit._id} tuit={tuit} />
+            case 'Merchant':
+              return <MerchantTuit key={tuit._id} tuit={tuit} />
+            case 'Specialist':
+              return <SpecialistTuit key={tuit._id} tuit={tuit} />
+            default:
+              return <TuitItem key={tuit._id} tuit={tuit} />
+          }
         })}
       </div>
 
