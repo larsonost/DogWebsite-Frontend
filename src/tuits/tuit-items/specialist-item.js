@@ -64,7 +64,7 @@ const isProfilePage = location.pathname === "/profile";
 const user = users.find(user => user.username === tuit.username);
 const userId = user ? user._id : null;
   return (
-    <div className="tuit-item-owner border rounded p-3 my-2" style={{ backgroundColor: 'rgba(255, 200, 200, 1)', position: 'relative'  }}>
+    <div className="tuit-item border rounded p-3 my-2" style={{ backgroundColor: 'rgba(255, 200, 200, 1)', position: 'relative'  }}>
     {
         location.pathname === "/profile" &&
         <FaTimes onClick={() => deleteTuitHandler(tuit._id)} style={{ cursor: 'pointer', position: 'absolute', top: '10px', right: '10px' }} />
