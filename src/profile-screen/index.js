@@ -29,10 +29,22 @@ function ProfileScreen() {
 
     fetchProfile();
   }, [dispatch]);
-  const save = () => {
+  
+  //const save = () => {
+  //  const updatedProfile = { ...profile, firstName };
+  //  dispatch(updateUserThunk(updatedProfile));
+  //};
+  const save = async () => {
     const updatedProfile = { ...profile, firstName };
-    dispatch(updateUserThunk(updatedProfile));
+    const { payload } = await dispatch(updateUserThunk(updatedProfile)); // Assuming the dispatch returns the updated user
+    if (payload) {
+      setProfile(payload); // Update the local profile state with the updated data from the server
+    }
   };
+  
+
+
+
 
 
   const getValue = (mainObj, backupObj, key) => {
@@ -63,7 +75,7 @@ function ProfileScreen() {
     <div className="card mb-4">
       <div className="card-header">Private Information</div>
       <div className="card-body">
-        <p><strong>First Name:</strong> {user.firstName}</p>
+        <p><strong>First Name:</strong> {(profile && profile.firstName) || (user && user.firstName)}</p>
         <p><strong>Last Name:</strong> {user.lastName}</p>
         <p><strong>Website ID:</strong> {user.ID}</p>
         <p><strong>Password:</strong> {user.password}</p>
@@ -104,14 +116,23 @@ function ProfileScreen() {
   );
 
   const relevantTuits = tuits.filter(tuit => tuit.username === user.username).reverse();
-  const [firstName, setFirstName] = useState(user.firstName);/////
+  //const [firstName, setFirstName] = useState(user.firstName);
+  const [firstName, setFirstName] = useState(profile && profile.firstName);
+
+
   return (
     <div className="container">
       <div className="row">
         {/* Left column for main content */}
         <div className="col-md-8">
-          <h2>{user.firstName} {user.lastName}</h2>
+        <h2>{(profile && profile.firstName) || (user && user.firstName)} {(user.lastName)}</h2>
+
+
+        
+
+
           <h5>@{user.username}</h5>
+
 
           <div className="mb-3">
             <span><strong>Followers:</strong> {user.followers ? user.followers.length : 0}</span>
@@ -138,6 +159,18 @@ function ProfileScreen() {
             })}
           </div>
 
+        </div>
+
+        {/* Right column for private details */}
+        <div className="col-md-4">
+        {renderPrivateDetails()}
+        <div>
+            <label>First Name</label>
+            <input style={{ marginLeft: '10px' }} type="text" value={firstName}
+              onChange={(event) => setFirstName(event.target.value)} />
+
+          </div>
+          
           <button className="m-2 btn btn-primary"
             onClick={() => {
               dispatch(logoutThunk());
@@ -148,18 +181,6 @@ function ProfileScreen() {
           <button className="m-2 btn btn-primary" onClick={save}>
             Save
           </button>
-
-          <div>
-            <label>First Name</label>
-            <input type="text" value={firstName}
-              onChange={(event) => setFirstName(event.target.value)} />
-
-          </div>
-        </div>
-
-        {/* Right column for private details */}
-        <div className="col-md-4">
-          {renderPrivateDetails()}
         </div>
       </div>
     </div>
