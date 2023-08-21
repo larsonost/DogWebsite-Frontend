@@ -12,11 +12,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import LoginScreen from "./login-screen";
 import whoReducer from "./reducers/who-reducer";
 import Profile from "./profile-screen";
-import DetailContent from "./details-screen/detail_element";
 import tuitsReducer from "./reducers/tuits-reducer";
-import "./App.css"; // Import the App.css file
+import "./App.css";
+import searchReducer from "./reducers/search-reducer";
+import searchIdReducer from "./reducers/searchId-reducer";
+import Details from "./details-screen"; // Import the App.css file
 const store = configureStore({
-  reducer: { who: whoReducer, tuits: tuitsReducer, user: authReducer  },
+  reducer: { who: whoReducer, tuits: tuitsReducer, user: authReducer,places: searchReducer,
+    placesDetails: searchIdReducer },
 });
 function App() {
   return (
@@ -40,8 +43,8 @@ function App() {
                 <Route path="/login" element={<LoginScreen />} />
                 <Route path="/register" element={<RegisterScreen />} />
                 <Route path="/profile/*" element={<Profile />} />
-                <Route path="/details" element={<DetailContent />} />
-                <Route path="/search" element={<SearchResult />} />
+                <Route path="/details/*" element={<Details />} />
+                <Route path="/search/*" element={<SearchResult />} />
                 <Route path="/competition" element={<CompetitionScreen />} />
                 <Route path="/client" element={<ClientScreen />} />
               </Routes>
