@@ -3,13 +3,10 @@ import React, {useEffect, useState} from "react";
 import {findDetailThunk, findThunk} from "../services/search-thunk";
 import {Link} from "react-router-dom";
 
-const SERVER_API_URL = process.env.REACT_APP_SERVER_API_URL;
-const USERS_URL = `${SERVER_API_URL}/users`;
 
 
 function Details() {
     const { places, loading } = useSelector(state => state.places)
-    const [users, setUsers] = useState([]);
     const { placesDetails} = useSelector(state => state.placesDetails)
 
     const dispatch = useDispatch();
@@ -17,23 +14,6 @@ function Details() {
     useEffect(() => {
         dispatch(findDetailThunk())
     }, [])
-    useEffect(() => {
-
-        const fetchUsers = async () => {
-            try {
-                const response = await fetch(USERS_URL);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch users');
-                }
-                const data = await response.json();
-                setUsers(data);
-            } catch (error) {
-                console.error("There was an error fetching the users:", error);
-            }
-        };
-
-        fetchUsers();
-    }, []);
     console.log(places)
     return (
         <>
@@ -66,12 +46,11 @@ function Details() {
                                     (tuit => {
                                         return <div key={tuit._id}>
                                             {tuit.reviews.map((type, index) => {
-                                                //const user = users.find(u => u.username === type.user);
                                                     return <span key={index}>
                                                             <Link to={`/profile/${type.user}`}>@<b>{type.user}</b><br/> </Link>
                                                         {type.review}<br/><br/>
                                                             </span>
-                                                } 
+                                                }
                                             )
                                             }
                                         </div>
