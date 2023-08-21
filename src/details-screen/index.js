@@ -66,9 +66,9 @@ function Details() {
                                     (tuit => {
                                         return <div key={tuit._id}>
                                             {tuit.reviews.map((type, index) => {
-                                                const user = users.find(u => u.username === type.user);
+                                                //const user = users.find(u => u.username === type.user);
                                                     return <span key={index}>
-                                                            <Link to={`/profile/${user._id}`}>@<b>{type.user}</b><br/> </Link>
+                                                            <Link to={`/profile/${type.user}`}>@<b>{type.user}</b><br/> </Link>
                                                         {type.review}<br/><br/>
                                                             </span>
                                                 } 
