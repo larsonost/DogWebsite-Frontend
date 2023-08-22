@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import React, {useEffect, useState} from "react";
-import {findDetailThunk, findThunk} from "../services/search-thunk";
+import {findDetailThunk, findThunk, findUserDetailThunk} from "../services/search-thunk";
 import {Link} from "react-router-dom";
 
 const SERVER_API_URL = process.env.REACT_APP_SERVER_API_URL;
@@ -9,28 +9,35 @@ const USERS_URL = `${SERVER_API_URL}/users`;
 function Details() {
     const { places, loading } = useSelector(state => state.places)
     const { placesDetails} = useSelector(state => state.placesDetails)
+    const { userDetails} = useSelector(state => state.userDetails)
     const [users, setUsers] = useState([]);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(findDetailThunk())
+        dispatch(findUserDetailThunk())
     }, [])
-    console.log(places)
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const response = await fetch(USERS_URL);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch users');
-                }
-                const data = await response.json();
-                setUsers(data);
-            } catch (error) {
-                console.error("There was an error fetching the users:", error);
-            }
-        };
-        fetchUsers();
-    }, []);
+    console.log(places);
+    console.log(userDetails);
+    // useEffect(() => {
+    //     const fetchUsers = async () => {
+    //         try {
+    //             const response = await fetch(USERS_URL);
+    //             if (!response.ok) {
+    //                 throw new Error('Failed to fetch users');
+    //             }
+    //             const data = await response.json();
+    //             console.log(data)
+    //             setUsers(data);
+    //             // updateMyArray( arr => [...arr, `${arr.length}`]);
+    //             console.log(users)
+    //         } catch (error) {
+    //             console.error("There was an error fetching the users:", error);
+    //         }
+    //     };
+    //     fetchUsers();
+    //     console.log(users)
+    // }, []);
     return (
         <>
             <div className="row">
@@ -62,9 +69,9 @@ function Details() {
                                     (tuit => {
                                         return <div key={tuit._id}>
                                             {tuit.reviews.map((type, index) => {
-                                                    const user = users.find(u => u.username === type.user);
+                                                    const user = userDetails.find(u => u.username === type.user);
+                                                    console.log(user)
                                                     return <span key={index}>
-                                                        
                                                             <Link to={`/profile/${user._id}`}>@<b>{type.user}</b><br/> </Link>
                                                         {type.review}<br/><br/>
                                                             </span>

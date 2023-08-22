@@ -3,6 +3,7 @@ import HomeScreen from "./home-screen";
 import CompetitionScreen from "./competition-screen";
 import ProfileOthers from "./profile-screen/profile-others";
 import ClientScreen from "./client-screen";
+import userDetailReducer from "./reducers/find_user_details";
 import RegisterScreen from "./register-screen";
 import NavigationSidebar from "./navigation-sidebar";
 import SearchResult from "./search result";
@@ -20,7 +21,7 @@ import searchIdReducer from "./reducers/searchId-reducer";
 import Details from "./details-screen"; // Import the App.css file
 const store = configureStore({
   reducer: { who: whoReducer, tuits: tuitsReducer, user: authReducer,places: searchReducer,
-    placesDetails: searchIdReducer },
+    placesDetails: searchIdReducer, userDetails: userDetailReducer },
 });
 function App() {
   return (

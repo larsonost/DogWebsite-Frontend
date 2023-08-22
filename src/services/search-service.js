@@ -25,3 +25,9 @@ export const deletePark = async (status) => {
     const response = await axios.delete(`${TUITS_API}/${status}`)
     return response.data
 }
+
+export const findUserDetails = async () => {
+    const response = await axios.get(`http://localhost:4000/api/users`);
+    const tuits = response.data;
+    return tuits;
+}

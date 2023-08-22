@@ -22,3 +22,8 @@ export const createThunk = createAsyncThunk(
         const newPark = await service.createPark(park)
         return newPark
     })
+export const findUserDetailThunk = createAsyncThunk(
+    "park/findUserDetails",
+    async () =>
+        await service.findUserDetails()
+);
