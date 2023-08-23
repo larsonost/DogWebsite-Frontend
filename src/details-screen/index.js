@@ -12,8 +12,8 @@ function Details() {
     const { userDetails } = useSelector(state => state.userDetails)
     const { currentUser } = useSelector(state => state.user);
     const [users, setUsers] = useState([]);
-    const [localReviews, setLocalReviews] = useState([]); // Step 1: New state for local reviews
-    const [newReview, setNewReview] = useState(''); // State to hold the new review text
+    const [localReviews, setLocalReviews] = useState([]);
+    const [newReview, setNewReview] = useState('');
 
     const dispatch = useDispatch();
 
@@ -31,25 +31,6 @@ function Details() {
     }
     console.log(places);
     console.log(userDetails);
-    // useEffect(() => {
-    //     const fetchUsers = async () => {
-    //         try {
-    //             const response = await fetch(USERS_URL);
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to fetch users');
-    //             }
-    //             const data = await response.json();
-    //             console.log(data)
-    //             setUsers(data);
-    //             // updateMyArray( arr => [...arr, `${arr.length}`]);
-    //             console.log(users)
-    //         } catch (error) {
-    //             console.error("There was an error fetching the users:", error);
-    //         }
-    //     };
-    //     fetchUsers();
-    //     console.log(users)
-    // }, []);
     return (
         <>
             <div className="row">
@@ -90,7 +71,6 @@ function Details() {
                                 </div>
                             })
                     }
-                    {/* Conditionally render the review form based on the currentUser */}
                     {currentUser ? (
                         <form onSubmit={handleReviewSubmit}>
                             <textarea
