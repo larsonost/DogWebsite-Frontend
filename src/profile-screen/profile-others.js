@@ -19,6 +19,7 @@ const USERS_URL = `${SERVER_API_URL}/users`;
 
 function ProfileOthers() {
   const [currentUserId, setCurrentUserId] = useState(null);
+  const { currentUser } = useSelector((state) => state.user);
   const [isFollowed, setIsFollowed] = useState(false);
   const [followers, setFollowers] = useState([]);
   const { userId } = useParams();
@@ -125,9 +126,11 @@ function ProfileOthers() {
 
       <div>
         <h1>
-          <button onClick={followUser} className="float-end">
-            {isFollowed ? "Followed" : "Follow"}
-          </button>
+          {currentUser && (
+            <button onClick={followUser} className="float-end">
+              {isFollowed ? "Followed" : "Follow"}
+            </button>
+          )}
         </h1>
       </div>
       <div className="mb-3">
